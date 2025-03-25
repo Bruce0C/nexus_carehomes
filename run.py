@@ -89,9 +89,9 @@ def administer_medication(SHEET, user_name, service_user, pill_color):
 def main():
     global daily_medication_log
     daily_medication_log = reset_daily_medication_log()
-    sheet = SHEET.user
+    Sheet = SHEET.user
     user_name = input("Enter your name: ")
-    log_user_login(sheet, user_name)
+    log_user_login(SHEET, user)
     care_homes = get_care_homes()
     print("Select a care home:")
     for idx, home in enumerate(care_homes, 1):
