@@ -59,3 +59,32 @@ allowed_medications = {
     "blue": ["Gen", "Allen", "Tom"],
     "green": ["Mike", "Ed", "Kyle"]
 }
+
+
+def administer_medication(sheet, user_name, service_user, pill_color):
+    """
+    Record medication administration 
+    """
+    if service_user not in allowed_medications[pill_color]:
+        print(Fore.RED + f"{service_user} is not allowed to receive {pill_color} pills.")
+        return
+    
+    timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    max_doses_per_time = 2
+    max_doses_per_day = 4
+    
+    if service_user not in daily_medication_log[pill_color]:
+        daily_medication_log[pill_color][service_user] = 0
+    
+    if daily_medication_log[pill_color][service_user] >= max_doses_per_day:
+        print(Fore.RED + "You have reached the daily maximum for this medication. Please do not give the service user anymore!")
+        return
+
+    dose = int(input(f"How many {pill_color} pills are being given? (Max {max_doses_per_time} at a time): "))
+    if dose > max_doses_per_time:
+        print(Fore.RED + "You cannot give more than 2 pills at a time!")
+        return
+    daily_medication_log[pill_color][service_user] += dose
+    batch_data = [[timestamp, user_name, service_user, f"{dose} {pill_color} pill(s)", "Given"]]
+    sheet.append_rows(batch_data) 
+    print(Fore.GREEN + f"Recorded: {dose} {pill_color} pill(s) given to {service_user}.")
