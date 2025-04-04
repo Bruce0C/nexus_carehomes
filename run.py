@@ -21,67 +21,17 @@ medication = SHEET.worksheet('medication')
 schedule = SHEET.worksheet('schedule')
 daily_notes = SHEET.worksheet('notes')
 
-names = user_list.get_all_values()
-home = care_homes.get_all_values()
-dosage = medication.get_all_values()
-activities = schedule.get_all_values()
-notes = daily_notes.get_all_values()
-
 
 # Log user login
 def log_user_login():
     """
     Log user name in spreadsheet
     """
-    print('Welcome to Nexus care homes, please enter your name to log in: ')
+    print('Welcome to Nexus care homes, please enter your name to begin')
+
+    name_str = input("Enter your name here: ")
+    print(
+        f"Hello {name_str}. Please select a the care home")
 
 
-# Get care home
-def get_care_homes():
-
-    # Select care home
-
-
-def get_care_homes(care_home):
-    """
-    ...
-    """
-
-# Select service user
-
-
-def get_service_users(care_home):
-    """
-    ...
-    """
-
-# Daily schedule
-
-
-def get_schedule(user):
-    """
-    ...
-    """
-
-# Track medication
-
-
-def reset_daily_medication_log():
-    """
-    ...
-    """
-
-# Record medication administration
-
-
-def administer_medication():
-    """
-    ...
-    """
-
-
-# Main Application loop
-def main():
-    """
-    ...
-    """
+log_user_login()
