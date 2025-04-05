@@ -19,15 +19,17 @@ care_homes = SHEET.worksheet('care_home')
 medication = SHEET.worksheet('medication')
 schedule = SHEET.worksheet('schedule')
 daily_notes = SHEET.worksheet('notes')
-now = datetime.now()
-
+now = datetime.now
+colour = colorama.Fore
 
 # Log user login
+
+
 def log_user_login():
     """
-    Log user name in spreadsheet
+    Log user name in spreadsheet.
     """
-    print('Welcome to Nexus care homes, please enter your name to begin')
+    print('Please enter your name to begin')
 
     name_str = input("Enter your name here: ")
     print(
@@ -36,7 +38,7 @@ def log_user_login():
 
 def update_user_worksheet(name_str):
     """
-    Update user name in spreadsheet
+    Update user name in spreadsheet.
     """
     print('Updating user name...\n')
     user_worksheet = SHEET.worksheet('user')
@@ -44,5 +46,28 @@ def update_user_worksheet(name_str):
     print('Name logged succesefully.\n')
 
 
-log_user_login()
-update_user_worksheet(log_user_login)
+def get_care_homes():
+    """
+    Collects column of data from home worksheet,
+    """
+    home = SHEET.worksheet("home")
+
+    columns = []
+    for ind in range(1, 7):
+        column = home.col_values(ind)
+        columns.append(column[-5:])
+
+    return columns
+
+
+def main():
+    """
+    Run all program functions
+    """
+    log_user_login()
+    update_user_worksheet(log_user_login)
+    get_care_homes()
+
+
+print("Welcome to nexus care homes work care assistant")
+main()
