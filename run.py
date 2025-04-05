@@ -15,11 +15,11 @@ SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('nexuscare')
 
-user_list = SHEET.worksheet('user')
 care_homes = SHEET.worksheet('care_home')
 medication = SHEET.worksheet('medication')
 schedule = SHEET.worksheet('schedule')
 daily_notes = SHEET.worksheet('notes')
+now = datetime.now()
 
 
 # Log user login
@@ -34,4 +34,15 @@ def log_user_login():
         f"Hello {name_str}. Please select a the care home")
 
 
+def update_user_worksheet(name_str):
+    """
+    Update user name in spreadsheet
+    """
+    print('Updating user name...\n')
+    user_worksheet = SHEET.worksheet('user')
+    user_worksheet.append_row(name_str)
+    print('Name logged succesefully.\n')
+
+
 log_user_login()
+update_user_worksheet(log_user_login)
