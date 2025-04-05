@@ -83,6 +83,28 @@ def select_home():
             print("Invalid input. Please enter 1, 2, or 3.")
 
 
+def access_home_sheet(home_name):
+    """
+    This function accesses and displays column-based service user data
+    from the selected care home worksheet
+    """
+    worksheet = SHEET.worksheet(home_name)
+
+    columns = []
+    for i in range(1, worksheet.col_count + 1):
+        column = worksheet.col_values(i)
+        if column:  # Ignore empty columns
+            columns.append(column)
+
+    print(Fore.GREEN + "Access granted")
+    print("The service users in this care home are...")
+
+    for col in columns:
+        print(", ".join(col))
+
+    return worksheet
+
+
 def main():
     """
     Run all program functions
@@ -91,6 +113,7 @@ def main():
     update_user_worksheet(log_user_login)
     get_care_homes()
     select_home()
+    access_home_sheet(home_name)
 
 
 print("Welcome to nexus care homes work care assistant")
