@@ -105,6 +105,30 @@ def access_home_sheet(home_name):
     return worksheet
 
 
+def service_user_information():
+    """
+    This function lets the user to select
+     one of three options notes, medication, or schedule
+     for the service user.
+    """
+    print("Please select which you would like to access:")
+    print("1. Notes")
+    print("2. Medication")
+    print("3. Schedule")
+
+    options = {"1": "notes", "2": "medication", "3": "schedule"}
+
+    while True:
+        choice = input("Enter option (1, 2, or 3): ").strip()
+        if choice in options:
+            sheet_name = options[choice]
+            worksheet = SHEET.worksheet(sheet_name)
+            print(f"You selected: {sheet_name.capitalize()}")
+            return worksheet
+        else:
+            print("Invalid input. Please enter 1, 2, or 3.")
+
+
 def main():
     """
     Run all program functions
@@ -114,6 +138,7 @@ def main():
     get_care_homes()
     select_home()
     access_home_sheet(home_name)
+    service_user_information()
 
 
 print("Welcome to nexus care homes work care assistant")
