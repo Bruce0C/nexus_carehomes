@@ -15,7 +15,7 @@ SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('nexuscare')
 
-care_homes = SHEET.worksheet('care_home')
+care_homes = SHEET.worksheet('home')
 medication = SHEET.worksheet('medication')
 schedule = SHEET.worksheet('schedule')
 daily_notes = SHEET.worksheet('notes')
@@ -60,6 +60,29 @@ def get_care_homes():
     return columns
 
 
+def select_home():
+    """
+    This function displays care home options using data from the 'home'
+     worksheet and returns the selected home name
+    """
+    care_home_columns = get_care_homes()
+    # Take names from first row of each of the first 3 columns
+    care_home_names = [col[0] for col in care_home_columns[:3]]
+
+    print("Select a care home:")
+    for i, name in enumerate(care_home_names, start=1):
+        print(f"{i}. {name}")
+
+    while True:
+        choice = input("Enter option (1, 2, or 3): ").strip()
+        if choice in {"1", "2", "3"}:
+            selected_home = care_home_names[int(choice) - 1]
+            print(f"You selected: {selected_home}")
+            return selected_home
+        else:
+            print("Invalid input. Please enter 1, 2, or 3.")
+
+
 def main():
     """
     Run all program functions
@@ -67,6 +90,7 @@ def main():
     log_user_login()
     update_user_worksheet(log_user_login)
     get_care_homes()
+    select_home()
 
 
 print("Welcome to nexus care homes work care assistant")
