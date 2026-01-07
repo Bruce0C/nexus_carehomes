@@ -31,10 +31,10 @@ now = datetime.now
 colour = colorama.Fore
 
 # print to test API function
-print(care_homes)
-print(medication)
-print(schedule)
-print(daily_notes)
+# print(care_homes)
+# print(medication)
+# print(schedule)
+# print(daily_notes)
 
 # Log user
 
@@ -43,12 +43,22 @@ def log_user_login():
     """
     Log user name in spreadsheet.
     """
-    print('Please enter your name to begin')
+    # Determine the current hour
+    current_hour = datetime.now().hour
+    if current_hour < 12:
+        greeting = "Good morning"
+    elif 12 <= current_hour < 18:
+        greeting = "Good afternoon"
+    else:
+        greeting = "Good evening"
+
+    print(f'{greeting}! Please enter your name to begin\n')
 
     name_str = input("Enter your name here: ")
+    print('Name logged succesefully.\n')
     print(
-        f"Hello {name_str}. Please select a the care home")
-    return name_str  # Return the name
+        f"Welcome {name_str}. Please select a care home\n")
+    return name_str  # Returns user name
 
 # Update users worksheet to log user
 
@@ -57,16 +67,16 @@ def update_user_worksheet(name_str):
     """
     Update user name in spreadsheet.
     """
-    print('Updating user name...\n')
     user_worksheet = SHEET.worksheet('user')
     user_worksheet.append_row([name_str])
-    print('Name logged succesefully.\n')
 
 
 def get_care_homes():
     """
     Collects column of data from home worksheet,
     """
+    homes = care_homes.col_values(1)
+    return homes
 
 
 def select_home():
@@ -98,9 +108,6 @@ def main():
     name_str = log_user_login()  # Capture the returned name
     update_user_worksheet(name_str)  # Pass it to the next function
 
-    log_user_login()
-    update_user_worksheet(name_str)
 
-
-print("Welcome to nexus care homes work care assistant")
+print("Welcome to nexus care homes work care assistant\n")
 main()
