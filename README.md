@@ -1,32 +1,43 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# [Nexus Carehomes](https://nexus-care-e0ddbf0b6681.herokuapp.com)
 
-Welcome,
+Developer: Bruce Chibisa ([Bruce0C](https://www.github.com/Bruce0C))
 
-This is the Code Institute student template for deploying your third portfolio project, the Python command-line project. The last update to this file was: **May 14, 2024**
+[![GitHub commit activity](https://img.shields.io/github/commit-activity/t/Bruce0C/nexus_carehomes)](https://www.github.com/Bruce0C/nexus_carehomes/commits/main)
+[![GitHub last commit](https://img.shields.io/github/last-commit/Bruce0C/nexus_carehomes)](https://www.github.com/Bruce0C/nexus_carehomes/commits/main)
+[![GitHub repo size](https://img.shields.io/github/repo-size/Bruce0C/nexus_carehomes)](https://www.github.com/Bruce0C/nexus_carehomes)
+[![badge](https://img.shields.io/badge/deployment-Heroku-purple)](https://nexus-care-e0ddbf0b6681.herokuapp.com)
 
-## Reminders
+![screenshot](documentation/mockup.png)
 
-- Your code must be placed in the `run.py` file
-- Your dependencies must be placed in the `requirements.txt` file
-- Do not edit any of the other files or your code may not deploy properly
+source: [nexus_carehomes amiresponsive](https://ui.dev/amiresponsive?url=https://nexus-care-e0ddbf0b6681.herokuapp.com)
 
-## Creating the Heroku app
+> [!IMPORTANT]  
+> The examples in these templates are strongly influenced by the Code Institute walkthrough project called "Love Sandwiches".
 
-When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
+## UX
 
-1. `heroku/python`
-2. `heroku/nodejs`
+### The 5 Planes of UX
 
-You must then create a _Config Var_ called `PORT`. Set this to `8000`
 
-If you have credentials, such as in the Love Sandwiches project, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
 
-Connect your GitHub repository and deploy as normal.
+#### 1. Strategy
 
-## Constraints
+**Purpose**
+- Provide care givers simple and effective way to log service user activities and help with documentation.
+- Help users optimize working day by reducing the amount of physical paperwork by using their devices to quiclkly take notes.
+- Display information a care giver may find helpful about their working day.
+- Add any input to a spreadsheet, this would aid manager and users of the google sheet to gain insite on the care givers and service users. 
 
-The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
 
----
+**Primary User Needs**
+- Log in/out.
+- Choose assigned care home.
+- View notes regarding service user.
+- Input notes regarding service user
+- Store notes in a Spreadsheet.
 
-Happy coding!
+**Business Goals**
+- Offer a reliable tool for care givers to optmise their knowladge of their service users.
+- Help businesses reduce amount time needed to carry out a handover process.
+- Reduce the amount of time it takes to write notes.
+- Improve the legibility of notes.  
