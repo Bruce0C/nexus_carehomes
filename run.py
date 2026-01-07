@@ -39,7 +39,7 @@ print(daily_notes)
 # Log user
 
 
-def log_user_login(use):
+def log_user_login():
     """
     Log user name in spreadsheet.
     """
@@ -48,8 +48,9 @@ def log_user_login(use):
     name_str = input("Enter your name here: ")
     print(
         f"Hello {name_str}. Please select a the care home")
+    return name_str  # Return the name
 
-# Update users worksheet
+# Update users worksheet to log user
 
 
 def update_user_worksheet(name_str):
@@ -58,7 +59,7 @@ def update_user_worksheet(name_str):
     """
     print('Updating user name...\n')
     user_worksheet = SHEET.worksheet('user')
-    user_worksheet.append_row(name_str)
+    user_worksheet.append_row([name_str])
     print('Name logged succesefully.\n')
 
 
@@ -94,7 +95,11 @@ def main():
     """
     Run all program functions
     """
+    name_str = log_user_login()  # Capture the returned name
+    update_user_worksheet(name_str)  # Pass it to the next function
+
     log_user_login()
+    update_user_worksheet(name_str)
 
 
 print("Welcome to nexus care homes work care assistant")
