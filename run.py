@@ -52,10 +52,10 @@ def log_user_login():
     else:
         greeting = "Good evening"
 
-    print(f'{greeting}! Please enter your name to begin\n')
+    print(f'{greeting}! Please enter your name to begin.\n')
 
     name_str = input("Enter your name here: ")
-    print('Name logged succesefully.\n')
+    print('\nName logged succesefully.\n')
     print(
         f"Welcome {name_str}. Please select a care home\n")
     return name_str  # Returns user name
@@ -70,12 +70,17 @@ def update_user_worksheet(name_str):
     user_worksheet = SHEET.worksheet('user')
     user_worksheet.append_row([name_str])
 
+# Get care home names
+
 
 def get_care_homes():
     """
-    Collects column of data from home worksheet,
+    Collects column of data from home worksheet and prints it.
     """
-    homes = care_homes.col_values(1)
+    homes = care_homes.col_values(1)  # Fetches all values in the first column
+    print("Care homes available in the spreadsheet:")
+    for home in homes:
+        print(home)  # Print each care home name
     return homes
 
 
@@ -107,6 +112,7 @@ def main():
     """
     name_str = log_user_login()  # Capture the returned name
     update_user_worksheet(name_str)  # Pass it to the next function
+    get_care_homes()
 
 
 print("Welcome to nexus care homes work care assistant\n")
