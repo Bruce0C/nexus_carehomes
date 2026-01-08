@@ -1,7 +1,7 @@
 from datetime import datetime
 import gspread
 from google.oauth2.service_account import Credentials
-import colorama
+from colorama import Fore, Style
 
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
@@ -27,7 +27,7 @@ f_names = SHEET.worksheet('farhaven')
 t_names = SHEET.worksheet('tenville')
 b_names = SHEET.worksheet('brookway')
 now = datetime.now
-colour = colorama.Fore
+colour = Fore
 
 # print to test API function
 # print(care_homes)
@@ -40,7 +40,7 @@ colour = colorama.Fore
 
 def log_user_login():
     """
-    Log user name in spreadsheet.
+    Log user name in user worksheet.
     """
     # Determine the current hour
     current_hour = datetime.now().hour
@@ -51,12 +51,14 @@ def log_user_login():
     else:
         greeting = "Good evening"
 
-    print(f'{greeting}! Please enter your name to begin.\n')
+    print(f'{Fore.GREEN}{greeting}{Style.RESET_ALL}! Please enter your name to'
+          ' begin.\n')
 
     name_str = input("Enter your name here: ")
     print('\nName logged succesefully.\n')
     print(
-        f"Welcome {name_str}. Please select a care home\n")
+        f"Welcome {Fore.GREEN}{name_str}{Style.RESET_ALL}. Please select a"
+        " care home\n")
     return name_str  # Returns user name
 
 # Update users worksheet to log user
@@ -79,7 +81,8 @@ def get_care_homes():
     homes = care_homes.col_values(1)  # Fetches all values in the first column
     print("Care homes available:")
     for home in homes:
-        print(home, "\n")  # Print each care home name
+        # Print each care home name
+        print(f"{Fore.LIGHTYELLOW_EX}{home}{Style.RESET_ALL}\n")
     return homes
 
 
@@ -99,21 +102,24 @@ def select_home():
             choice = int(input("Enter your choice (1, 2, 3, or 0 to exit): "))
             if choice == 1:
                 print("Farhaven selected.")
-                data = f_names.get_all_values()  # Fetch all values from Farhaven worksheet
+                # Fetch all values from Farhaven worksheet
+                data = f_names.get_all_values()
                 print("Service users living in Farhaven:")
                 for row in data:
                     print(row)
                 return f_names
             elif choice == 2:
                 print("Tenville selected.")
-                data = t_names.get_all_values()  # Fetch all values from Tenville worksheet
+                # Fetch all values from Tenville worksheet
+                data = t_names.get_all_values()
                 print("Service users living in Tenville :")
                 for row in data:
                     print(row)
                 return t_names
             elif choice == 3:
                 print("Brookway selected.")
-                data = b_names.get_all_values()  # Fetch all values from Brookway worksheet
+                # Fetch all values from Brookway worksheet
+                data = b_names.get_all_values()
                 print("Service users living in Brookway :")
                 for row in data:
                     print(row)
