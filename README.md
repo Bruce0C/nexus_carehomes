@@ -11,8 +11,6 @@ Developer: Bruce Chibisa ([Bruce0C](https://www.github.com/Bruce0C))
 
 source: [nexus_carehomes amiresponsive](https://ui.dev/amiresponsive?url=https://nexus-care-e0ddbf0b6681.herokuapp.com)
 
-> [!IMPORTANT]  
-> The examples in these templates are strongly influenced by the Code Institute walkthrough project called "Love Sandwiches".
 
 ## UX
 
