@@ -78,24 +78,54 @@ def get_care_homes():
     Collects column of data from home worksheet and prints it.
     """
     homes = care_homes.col_values(1)  # Fetches all values in the first column
-    print("Care homes available in the spreadsheet:")
+    print("Care homes available:")
     for home in homes:
-        print(home)  # Print each care home name
+        print(home, "\n")  # Print each care home name
     return homes
 
 
 def select_home():
     """
     This function displays care home options using data from the 'home'
-     worksheet and returns the selected home name
+    worksheet and returns the selected home name or ends the program.
     """
+    print("Select a care home:\n")
+    print("1. Farhaven")
+    print("2. Tenville")
+    print("3. Brookway")
+    print("0. Exit\n")
 
-
-def access_home_sheet():
-    """
-    This function accesses and displays column-based service user data
-    from the selected care home worksheet
-    """
+    while True:
+        try:
+            choice = int(input("Enter your choice (1, 2, 3, or 0 to exit): "))
+            if choice == 1:
+                print("Farhaven selected.")
+                data = f_names.get_all_values()  # Fetch all values from Farhaven worksheet
+                print("Service users living in Farhaven:")
+                for row in data:
+                    print(row)
+                return f_names
+            elif choice == 2:
+                print("Tenville selected.")
+                data = t_names.get_all_values()  # Fetch all values from Tenville worksheet
+                print("Service users living in Tenville :")
+                for row in data:
+                    print(row)
+                return t_names
+            elif choice == 3:
+                print("Brookway selected.")
+                data = b_names.get_all_values()  # Fetch all values from Brookway worksheet
+                print("Service users living in Brookway :")
+                for row in data:
+                    print(row)
+                return b_names
+            elif choice == 0:
+                print("Exiting the program. Goodbye!")
+                exit()  # Exit the program
+            else:
+                print("Invalid choice. Please enter 1, 2, 3, or 0.")
+        except ValueError:
+            print("Invalid input. Please enter a number (1, 2, 3, or 0).")
 
 
 def service_user_information():
@@ -113,6 +143,7 @@ def main():
     name_str = log_user_login()  # Capture the returned name
     update_user_worksheet(name_str)  # Pass it to the next function
     get_care_homes()
+    select_home()
 
 
 print("Welcome to nexus care homes work care assistant\n")
