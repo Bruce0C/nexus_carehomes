@@ -85,6 +85,8 @@ def get_care_homes():
         print(f"{Fore.LIGHTYELLOW_EX}{home}{Style.RESET_ALL}\n")
     return homes
 
+# Select care home
+
 
 def select_home():
     """
@@ -132,6 +134,8 @@ def select_home():
         except ValueError:
             print("Invalid input. Please enter a number (1, 2, 3, or 0).")
 
+# Select service user
+
 
 def select_service_user(selected_home):
     """
@@ -172,6 +176,8 @@ def select_service_user(selected_home):
         except ValueError:
             print("Invalid input. Please enter a number.")
 
+# Service user information options
+
 
 def service_user_information():
     """
@@ -179,6 +185,8 @@ def service_user_information():
      one of three options notes, medication, or schedule
      for the service user.
     """
+
+# Run all program functions
 
 
 def main():
@@ -192,5 +200,6 @@ def main():
     select_service_user(selected_home)
 
 
-print("Welcome to nexus care homes work care assistant\n")
+print("Welcome to Nexus Carehome, your digital assistant to help inform"
+      " your working day!\n")
 main()
