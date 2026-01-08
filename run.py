@@ -133,6 +133,46 @@ def select_home():
             print("Invalid input. Please enter a number (1, 2, 3, or 0).")
 
 
+def select_service_user(selected_home):
+    """
+    Displays service users based on the selected home and allows the user
+    to choose a service user or return to the care homes menu.
+    """
+    if selected_home == f_names:
+        print("Select a service user from Farhaven:")
+        service_users = ["Mike", "Donald", "Tom"]
+    elif selected_home == t_names:
+        print("Select a service user from Tenville:")
+        service_users = ["Ed", "Alice", "Kyle"]
+    elif selected_home == b_names:
+        print("Select a service user from Brookway:")
+        service_users = ["Lica", "Gen", "Alice"]
+    else:
+        print("Invalid home selected.")
+        return
+
+    print("Service users:")
+    for idx, user in enumerate(service_users, start=1):
+        print(f"{idx}. {user}")
+    print("0. Return to care homes")
+
+    while True:
+        try:
+            choice = int(
+                input("Enter your choice (1, 2, 3, or 0 to return): "))
+            if 1 <= choice <= len(service_users):
+                print(f"You selected {service_users[choice - 1]}.")
+                # You can add further functionality for the selected user here
+                return service_users[choice - 1]
+            elif choice == 0:
+                print("Returning to care homes...")
+                return select_home()  # Call the select_home function
+            else:
+                print("Invalid choice. Please select a valid option.")
+        except ValueError:
+            print("Invalid input. Please enter a number.")
+
+
 def service_user_information():
     """
     This function lets the user to select
@@ -148,7 +188,8 @@ def main():
     name_str = log_user_login()  # Capture the returned name
     update_user_worksheet(name_str)  # Pass it to the next function
     get_care_homes()
-    select_home()
+    selected_home = select_home()
+    select_service_user(selected_home)
 
 
 print("Welcome to nexus care homes work care assistant\n")
