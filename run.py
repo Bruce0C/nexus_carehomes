@@ -2,7 +2,6 @@ from datetime import datetime
 import gspread
 from google.oauth2.service_account import Credentials
 import colorama
-from colorama import Fore
 
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
