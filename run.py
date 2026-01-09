@@ -179,12 +179,48 @@ def select_service_user(selected_home):
 # Service user information options
 
 
-def service_user_information():
+def service_user_information(selected_user, selected_home):
     """
-    This function lets the user to select
-     one of three options notes, medication, or schedule
-     for the service user.
+    Fetches and displays data from the worksheet corresponding to the selected
+    service user and allows the user to return to the
+    service user selection menu.
     """
+    print(f"Fetching information for {selected_user}...\n")
+
+    try:
+        # Open the worksheet corresponding to the selected user
+        # Convert to lowercase to match worksheet names
+        user_worksheet = SHEET.worksheet(selected_user.lower())
+        # Fetch all data as a list of dictionaries
+        data = user_worksheet.get_all_records()
+
+        if not data:
+            print(f"No data found in the worksheet for {selected_user}.")
+        else:
+            print(f"Information for {selected_user}:")
+            for record in data:
+                for key, value in record.items():
+                    print(f"{key}: {value}")
+                print("\n")  # Add a blank line between records
+
+    except gspread.exceptions.WorksheetNotFound:
+        print(
+            f"Worksheet for {selected_user} not found. Please check the"
+            " worksheet name.")
+
+    print("0. Return to service user selection")
+
+    while True:
+        try:
+            choice = int(input("Enter your choice (0 to return): "))
+            if choice == 0:
+                print("Returning to service user selection...")
+                # Call the service user selection function
+                return select_service_user(selected_home)
+            else:
+                print("Invalid choice. Please select a valid option.")
+        except ValueError:
+            print("Invalid input. Please enter a number.")
 
 # Run all program functions
 
@@ -197,9 +233,10 @@ def main():
     update_user_worksheet(name_str)  # Pass it to the next function
     get_care_homes()
     selected_home = select_home()
-    select_service_user(selected_home)
+    selected_user = select_service_user(selected_home)
+    service_user_information(selected_user, selected_home)
 
 
-print("Welcome to Nexus Carehome, your digital assistant to help inform"
-      " your working day!\n")
+print(f"Welcome to {Fore.GREEN}Nexus Carehome{Style.RESET_ALL}, your digital"
+      " assistant to help inform your working day!\n")
 main()
