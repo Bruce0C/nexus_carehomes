@@ -39,3 +39,7 @@ source: [nexus_carehomes amiresponsive](https://ui.dev/amiresponsive?url=https:/
 - Help businesses reduce amount time needed to carry out a handover process.
 - Reduce the amount of time it takes to write notes.
 - Improve the legibility of notes.  
+- Centralized data management
+- Enhabce record keeping
+- Simplify decision making
+- Scalability by supporting multiple care homes and using goolge sheets as backend. 
