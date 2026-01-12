@@ -32,7 +32,8 @@ source: [nexus_carehomes amiresponsive](https://ui.dev/amiresponsive?url=https:/
 - Choose assigned care home.
 - View notes regarding service user.
 - Input notes regarding service user
-- Store notes in a Spreadsheet.
+- Store notes in a worksheetsheet.
+- Exit programme gracefully.
 
 **Business Goals**
 - Offer a reliable tool for care givers to optmise their knowladge of their service users.
