@@ -44,3 +44,15 @@ source: [nexus_carehomes amiresponsive](https://ui.dev/amiresponsive?url=https:/
 - Enhabce record keeping
 - Simplify decision making
 - Scalability by supporting multiple care homes and using goolge sheets as backend. 
+
+**Possible Future Plans**
+- Add authentication.
+- Time stamps for each note added to the workesheet.
+- Search and filter functionality.
+- Generate daily summary reports for each home, including service user updates, notes and schedules.
+- Intergration with other tools, such as task manager of calenders to sync schedules.
+- Intergration with other tools to enable notifications and reminders for important tasks.
+- Data validation, highliting missing or incomplete data in the worksheet. 
+- Analytics and insights,displaying trends or patterns (e.g., frequent medication updates, recurring issues).
+- Mobile-friendly interface, adapting the program for mobile devices or create a web-based version for easier access on the go.
+- User activity logs to track and log user actions (e.g., logins, data updates) for accountability and auditing.
