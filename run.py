@@ -194,7 +194,6 @@ def service_user_information(selected_user, selected_home):
 
     try:
         # Open the worksheet corresponding to the selected user
-        # Convert to lowercase to match worksheet names
         user_worksheet = SHEET.worksheet(selected_user.lower())
         # Fetch all data as a list of dictionaries
         data = user_worksheet.get_all_records()
@@ -213,19 +212,13 @@ def service_user_information(selected_user, selected_home):
             f"Worksheet for {selected_user} not found. Please check the"
             " worksheet name.")
 
-    print("0. Return to service user selection")
-
     while True:
-        try:
-            choice = int(input("Enter your choice (0 to return): "))
-            if choice == 0:
-                print("Returning to service user selection...")
-                # Call the service user selection function
-                return select_service_user(selected_home)
-            else:
-                print("Invalid choice. Please select a valid option.")
-        except ValueError:
-            print("Invalid input. Please enter a number.")
+        print("Options:")
+        print("0. Exit the program")
+        print("1. Input notes")
+        print("2. Administer medication")
+        print("3. View daily schedule")
+
 
 # Run all program functions
 
