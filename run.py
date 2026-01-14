@@ -219,6 +219,34 @@ def service_user_information(selected_user, selected_home):
         print("2. Administer medication")
         print("3. View daily schedule")
 
+        try:
+            choice = int(input("Enter your choice (0, 1, 2, or 3): "))
+            if choice == 0:
+                print("Exiting the program. Goodbye!")
+                sys.exit()  # Use sys.exit instead of exit
+            elif choice == 1:
+                print("Input notes selected.")
+                note = input("Enter your note: ")
+                # Append the note to the worksheet
+                user_worksheet.append_row([note])
+                print("Note added successfully.")
+            elif choice == 2:
+                print("Administer medication selected.")
+                # Call the medication function
+                print(
+                    f"Administering medication for {selected_user} is not"
+                    "implemented yet.")
+                return
+            elif choice == 3:
+                print("View daily schedule selected.")
+                # Open the "schedule" worksheet for the selected user
+                schedule_worksheet = SHEET.worksheet(
+                    f"{selected_user.lower()}_schedule")
+                return view_daily_schedule(schedule_worksheet)
+            else:
+                print("Invalid choice. Please select a valid option.")
+        except ValueError:
+            print("Invalid input. Please enter a number.")
 
 # Run all program functions
 
