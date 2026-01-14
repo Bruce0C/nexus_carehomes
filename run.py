@@ -248,6 +248,35 @@ def service_user_information(selected_user, selected_home):
         except ValueError:
             print("Invalid input. Please enter a number.")
 
+# View daily schedule
+
+
+def view_daily_schedule(schedule_worksheet):
+    """
+    Fetches and displays the daily schedule for the selected service user.
+    """
+    print("Fetching daily schedule...\n")
+    try:
+        # Fetch all data from the schedule worksheet
+        schedule_data = schedule_worksheet.get_all_records()
+        if not schedule_data:
+            print("No schedule data found.")
+        else:
+            print("Daily Schedule:")
+            for index, record in enumerate(schedule_data, start=1):
+                print(f"Record {index}:")
+                for key, value in record.items():
+                    print(f"  {key}: {value}")
+                print("\n")  # Add a blank line between records
+    except gspread.exceptions.WorksheetNotFound:
+        print("Schedule worksheet not found. Please check the worksheet name.")
+    except gspread.exceptions.APIError as e:
+        print(f"An API error occurred while fetching the schedule: {e}")
+    except gspread.exceptions.GSpreadException as e:
+        print(f"A GSpread error occurred while fetching the schedule: {e}")
+    except (KeyError, ValueError) as e:
+        print(f"A specific error occurred: {e}")
+
 # Run all program functions
 
 
