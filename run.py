@@ -7,6 +7,7 @@ from datetime import datetime
 from google.oauth2.service_account import Credentials
 import gspread
 from colorama import Fore, Style
+import sys
 
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
@@ -184,11 +185,11 @@ def select_service_user(selected_home):
 # Service user information options
 
 
-def service_user_information(selected_user, selected_home):
+def service_user_information(selected_user):
     """
     Fetches and displays data from the worksheet corresponding to the selected
-    service user and allows the user to return to the
-    service user selection menu.
+    service user and provides options to input notes, administer medication,
+    view the daily schedule, or exit the program.
     """
     print(f"Fetching information for {selected_user}...\n")
 
