@@ -4,10 +4,11 @@ It provides caregivers and managers with an efficient way to log activities,
 access service user information, and manage data stored in Google Sheets.
 '''
 from datetime import datetime
+import sys
 from google.oauth2.service_account import Credentials
 import gspread
 from colorama import Fore, Style
-import sys
+
 
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
