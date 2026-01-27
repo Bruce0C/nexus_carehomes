@@ -3,8 +3,7 @@ This script serves as a digital assistant for managing care home operations.
 It provides caregivers and managers with an efficient way to log activities,
 access service user information, and manage data stored in Google Sheets.
 '''
-import os
-import json
+
 from datetime import datetime
 import sys
 from google.oauth2.service_account import Credentials
@@ -17,8 +16,6 @@ SCOPE = [
     "https://www.googleapis.com/auth/drive"
 ]
 
-creds_json = os.getenv('GOOGLE_APPLICATION_CREDENTIALS')
-creds_dict = json.loads(creds_json)
 # const to hold the untracked credentials file
 CREDS = Credentials.from_service_account_file('creds.json')
 # const to give scopes to the credentials
@@ -111,12 +108,13 @@ def select_home():
 
     while True:
         try:
-            choice = int(input("Enter your choice (1, 2, 3, or 0 to exit): "))
+            choice = int(
+                input("Enter your choice (1, 2, 3, or 0 to exit): \n"))
             if choice == 1:
-                print("Farhaven selected.")
+                print("Farhaven selected.\n")
                 # Fetch all values from Farhaven worksheet
                 data = f_names.get_all_values()
-                print("Service users living in Farhaven:")
+                print("Service users living in Farhaven:\n")
                 for row in data:
                     print(row)
                 return f_names
@@ -124,15 +122,15 @@ def select_home():
                 print("Tenville selected.")
                 # Fetch all values from Tenville worksheet
                 data = t_names.get_all_values()
-                print("Service users living in Tenville :")
+                print("Service users living in Tenville :\n")
                 for row in data:
                     print(row)
                 return t_names
             elif choice == 3:
-                print("Brookway selected.")
+                print("Brookway selected.\n")
                 # Fetch all values from Brookway worksheet
                 data = b_names.get_all_values()
-                print("Service users living in Brookway :")
+                print("Service users living in Brookway :\n")
                 for row in data:
                     print(row)
                 return b_names
@@ -140,9 +138,9 @@ def select_home():
                 print("Exiting the program. Goodbye!")
                 exit()  # Exit the program
             else:
-                print("Invalid choice. Please enter 1, 2, 3, or 0.")
+                print("Invalid choice. Please enter 1, 2, 3, or 0.\n")
         except ValueError:
-            print("Invalid input. Please enter a number (1, 2, 3, or 0).")
+            print("Invalid input. Please enter a number (1, 2, 3, or 0).\n")
 
 # Select service user
 
@@ -153,38 +151,38 @@ def select_service_user(selected_home):
     to choose a service user or return to the care homes menu.
     """
     if selected_home == f_names:
-        print("Select a service user from Farhaven:")
+        print("Please select a service user from Farhaven:\n")
         service_users = ["Mike", "Donald", "Tom"]
     elif selected_home == t_names:
-        print("Select a service user from Tenville:")
+        print("Please select a service user from Tenville:")
         service_users = ["Ed", "Alice", "Kyle"]
     elif selected_home == b_names:
-        print("Select a service user from Brookway:")
+        print("Please select  a service user from Brookway:")
         service_users = ["Lica", "Gen", "Alice"]
     else:
-        print("Invalid home selected.")
+        print("Invalid home selected.\n")
         return
 
-    print("Service users:")
+    print("Service users:\n")
     for idx, user in enumerate(service_users, start=1):
         print(f"{idx}. {user}")
-    print("0. Return to care homes")
+    print("0. Return to care homes\n")
 
     while True:
         try:
             choice = int(
-                input("Enter your choice (1, 2, 3, or 0 to return): "))
+                input("Enter your choice (1, 2, 3, or 0 to return): \n"))
             if 1 <= choice <= len(service_users):
                 print(f"You selected {service_users[choice - 1]}.")
                 # You can add further functionality for the selected user here
                 return service_users[choice - 1]
             elif choice == 0:
-                print("Returning to care homes...")
+                print("Returning to care homes...\n")
                 return select_home()  # Call the select_home function
             else:
-                print("Invalid choice. Please select a valid option.")
+                print("Invalid choice. Please select a valid option.\n")
         except ValueError:
-            print("Invalid input. Please enter a number.")
+            print("Invalid input. Please enter a number.\n")
 
 # Service user information options
 
@@ -208,7 +206,7 @@ def service_user_information(selected_user):
         if not data:
             print(f"No data found in the worksheet for {selected_user}.")
         else:
-            print(f"Information for {selected_user}:")
+            print(f"Information for {selected_user}:\n")
             for record in data:
                 for key, value in record.items():
                     print(f"{key}: {value}")
@@ -217,17 +215,17 @@ def service_user_information(selected_user):
     except gspread.exceptions.WorksheetNotFound:
         print(
             f"Worksheet for {selected_user} not found. Please check the"
-            " worksheet name.")
+            " worksheet name.\n")
 
     while True:
         print("Options:")
         print("0. Exit the program")
         print("1. Input notes")
         print("2. Administer medication")
-        print("3. View daily schedule")
+        print("3. View daily schedule\n")
 
         try:
-            choice = int(input("Enter your choice (0, 1, 2, or 3): "))
+            choice = int(input("Enter your choice (0, 1, 2, or 3): \n"))
             if choice == 0:
                 print("Exiting the program. Goodbye!\n")
                 sys.exit()  # Use sys.exit instead of exit
