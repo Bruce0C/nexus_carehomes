@@ -5,10 +5,9 @@ access service user information, and manage data stored in Google Sheets.
 '''
 from datetime import datetime
 import sys
-from google.oauth2.service_account import Credentials
 import gspread
+from google.oauth2.service_account import Credentials
 from colorama import Fore, Style
-
 
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
@@ -28,8 +27,8 @@ SHEET = GSPREAD_CLIENT.open('nexuscare')
 # vars to reference the individual worksheets of the full spreadsheet
 care_homes = SHEET.worksheet('home')
 medication = SHEET.worksheet('medication')
-schedule = SHEET.worksheet('schedule')
-daily_notes = SHEET.worksheet('notes')
+
+# daily_notes = SHEET.worksheet('notes')
 f_names = SHEET.worksheet('farhaven')
 t_names = SHEET.worksheet('tenville')
 b_names = SHEET.worksheet('brookway')
@@ -186,6 +185,8 @@ def select_service_user(selected_home):
 # Service user information options
 
 
+# ...existing code...
+
 def service_user_information(selected_user):
     """
     Fetches and displays data from the worksheet corresponding to the selected
@@ -224,31 +225,31 @@ def service_user_information(selected_user):
         try:
             choice = int(input("Enter your choice (0, 1, 2, or 3): "))
             if choice == 0:
-                print("Exiting the program. Goodbye!")
+                print("Exiting the program. Goodbye!\n")
                 sys.exit()  # Use sys.exit instead of exit
             elif choice == 1:
-                print("Input notes selected.")
+                print("Input notes selected.\n")
                 note = input("Enter your note: ")
                 # Append the note to the worksheet
                 user_worksheet.append_row([note])
-                print("Note added successfully.")
+                print("Note added successfully.\n")
             elif choice == 2:
-                print("Administer medication selected.")
+                print("Administer medication selected.\n")
                 # Call the medication function
                 print(
                     f"Administering medication for {selected_user} is not"
-                    "implemented yet.")
+                    "implemented yet.\n")
                 return
             elif choice == 3:
-                print("View daily schedule selected.")
+                print("View daily schedule selected.\n")
                 # Open the "schedule" worksheet for the selected user
                 schedule_worksheet = SHEET.worksheet(
                     f"{selected_user.lower()}_schedule")
                 return view_daily_schedule(schedule_worksheet)
             else:
-                print("Invalid choice. Please select a valid option.")
+                print("Invalid choice. Please select a valid option.\n")
         except ValueError:
-            print("Invalid input. Please enter a number.")
+            print("Invalid input. Please enter a number.\n")
 
 # View daily schedule
 
@@ -262,7 +263,7 @@ def view_daily_schedule(schedule_worksheet):
         # Fetch all data from the schedule worksheet
         schedule_data = schedule_worksheet.get_all_records()
         if not schedule_data:
-            print("No schedule data found.")
+            print("No schedule data found.\n")
         else:
             print("Daily Schedule:")
             for index, record in enumerate(schedule_data, start=1):
@@ -271,13 +272,14 @@ def view_daily_schedule(schedule_worksheet):
                     print(f"  {key}: {value}")
                 print("\n")  # Add a blank line between records
     except gspread.exceptions.WorksheetNotFound:
-        print("Schedule worksheet not found. Please check the worksheet name.")
+        print("Schedule worksheet not found. Please check the worksheet"
+              "name.\n")
     except gspread.exceptions.APIError as e:
-        print(f"An API error occurred while fetching the schedule: {e}")
+        print(f"An API error occurred while fetching the schedule: {e}\n")
     except gspread.exceptions.GSpreadException as e:
-        print(f"A GSpread error occurred while fetching the schedule: {e}")
+        print(f"A GSpread error occurred while fetching the schedule: {e}\n")
     except (KeyError, ValueError) as e:
-        print(f"A specific error occurred: {e}")
+        print(f"A specific error occurred: {e}\n")
 
 # Run all program functions
 
@@ -291,7 +293,7 @@ def main():
     get_care_homes()
     selected_home = select_home()
     selected_user = select_service_user(selected_home)
-    service_user_information(selected_user, selected_home)
+    service_user_information(selected_user)
 
 
 print(f"Welcome to {Fore.GREEN}Nexus Carehome{Style.RESET_ALL}, your digital"
