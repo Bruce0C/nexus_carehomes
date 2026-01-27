@@ -3,6 +3,8 @@ This script serves as a digital assistant for managing care home operations.
 It provides caregivers and managers with an efficient way to log activities,
 access service user information, and manage data stored in Google Sheets.
 '''
+import os
+import json
 from datetime import datetime
 import sys
 from google.oauth2.service_account import Credentials
@@ -15,6 +17,8 @@ SCOPE = [
     "https://www.googleapis.com/auth/drive"
 ]
 
+creds_json = os.getenv('GOOGLE_APPLICATION_CREDENTIALS')
+creds_dict = json.loads(creds_json)
 # const to hold the untracked credentials file
 CREDS = Credentials.from_service_account_file('creds.json')
 # const to give scopes to the credentials
