@@ -361,6 +361,9 @@ def main():
     service_user_information(selected_user)
 
 
-print(f"Welcome to {Fore.GREEN}Nexus Carehomes{Style.RESET_ALL}, your digital"
-      " assistant to help inform your working day!\n")
+# Greetings message
+print(f"Welcome to {Fore.GREEN}Nexus Carehome{Style.RESET_ALL},")
+print("Your digital assistant to help inform your working day!\n")
+
+# Run the program
 main()
