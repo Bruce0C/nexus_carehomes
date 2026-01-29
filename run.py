@@ -295,16 +295,46 @@ def view_daily_schedule(schedule_worksheet):
 def administer_medication(selected_user):
     """
     Administers medication to the selected service user.
-    The medications are a choice between the red pill, blue pill, and green pill.
+    The medications are a choice between the red pill and blue pill.
     Each pill can be administered a maximum of 2 times per day.
     """
-
     print(f"Administering medication for {selected_user}...\n")
+
     while True:
         print("Available medications:")
         print("1. Red Pill")
         print("2. Blue Pill")
-        print("0. Exit")
+        print("0. Exit\n")
+
+        try:
+            choice = int(
+                input("Enter the number of the pill to administer: \n"))
+            if choice == 0:
+                print("Returning to service user information menu.\n")
+                return  # Exit the function and return to the calling function
+            elif choice == 1:
+                if medication_log["red_pill"] < 2:
+                    medication_log["red_pill"] += 1
+                    print("1 Red pill administered successfully.\n")
+                else:
+                    print(
+                        "You have already administered the maximum of "
+                        "2 red pills today.")
+            elif choice == 2:
+                if medication_log["blue_pill"] < 2:
+                    medication_log["blue_pill"] += 1
+                    print("1 Blue pill administered successfully.\n")
+                else:
+                    print(
+                        "You have already administered the maximum of"
+                        " 2 blue pills today.\n")
+            else:
+                print("Invalid choice. Please select a valid option.\n")
+        except ValueError:
+            print("Invalid input. Please enter a number.\n")
+
+    # After the loop ends, return to the service_user_information function
+    service_user_information(selected_user)
 
 
 # Run all program functions
