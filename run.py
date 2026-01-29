@@ -242,18 +242,14 @@ def service_user_information(selected_user):
                 user_worksheet.append_row([note])
                 print("Note added successfully.\n")
             elif choice == 2:
-                print("Administer medication selected.\n")
-                # Call the medication function
-                print(
-                    f"Administering medication for {selected_user} is not"
-                    "implemented yet.\n")
-                return
+                print("Administer medication selected.")
+                administer_medication(selected_user)
             elif choice == 3:
                 print("View daily schedule selected.\n")
                 # Open the "schedule" worksheet for the selected user
                 schedule_worksheet = SHEET.worksheet(
                     f"{selected_user.lower()}_schedule")
-                return view_daily_schedule(schedule_worksheet)
+                return view_daily_schedule(schedule_worksheet, selected_user)
             else:
                 print("Invalid choice. Please select a valid option.\n")
         except ValueError:
@@ -262,7 +258,7 @@ def service_user_information(selected_user):
 # View daily schedule
 
 
-def view_daily_schedule(schedule_worksheet):
+def view_daily_schedule(schedule_worksheet, selected_user):
     """
     Fetches and displays the daily schedule for the selected service user.
     """
@@ -288,6 +284,9 @@ def view_daily_schedule(schedule_worksheet):
         print(f"A GSpread error occurred while fetching the schedule: {e}\n")
     except (KeyError, ValueError) as e:
         print(f"A specific error occurred: {e}\n")
+
+    # Return to the service user information menu
+    service_user_information(selected_user)
 
 # Administer medication
 
