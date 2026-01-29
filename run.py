@@ -283,6 +283,21 @@ def view_daily_schedule(schedule_worksheet):
     except (KeyError, ValueError) as e:
         print(f"A specific error occurred: {e}\n")
 
+# Administer medication
+
+
+def administer_medication(selected_user):
+    """
+    Administers medication to the selected service user.
+    The medications are a choice between the red pill, blue pill, and green pill.
+    Each pill can be administered a maximum of 2 times per day.
+    """
+    # Dictionary to track the number of pills administered per user
+    medication_log = {
+        "red_pill": 0,
+        "blue_pill": 0,
+        "green_pill": 0
+    }
 # Run all program functions
 
 
@@ -298,6 +313,6 @@ def main():
     service_user_information(selected_user)
 
 
-print(f"Welcome to {Fore.GREEN}Nexus Carehome{Style.RESET_ALL}, your digital"
+print(f"Welcome to {Fore.GREEN}Nexus Carehomes{Style.RESET_ALL}, your digital"
       " assistant to help inform your working day!\n")
 main()
