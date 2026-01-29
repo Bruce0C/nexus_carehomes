@@ -298,6 +298,15 @@ def administer_medication(selected_user):
         "blue_pill": 0,
         "green_pill": 0
     }
+    print(f"Administering medication for {selected_user}...\n")
+    while True:
+        print("Available medications:")
+        print("1. Red Pill")
+        print("2. Blue Pill")
+        print("3. Green Pill")
+        print("0. Exit")
+
+
 # Run all program functions
 
 
