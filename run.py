@@ -9,6 +9,7 @@ import sys
 from google.oauth2.service_account import Credentials
 import gspread
 from colorama import Fore, Style
+from tabulate import tabulate
 
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
@@ -89,13 +90,22 @@ def update_user_worksheet(name_str):
 
 def get_care_homes():
     """
-    Collects column of data from home worksheet and prints it.
+    Collects column of data from home worksheet and prints it in a table
+    format.
     """
-    homes = care_homes.col_values(1)  # Fetches all values in the first column
-    print("Care homes available:")
-    for home in homes:
-        # Print each care home name
-        print(f"{Fore.LIGHTYELLOW_EX}{home}{Style.RESET_ALL}\n")
+    homes = care_homes.get_all_values()  # Fetches all rows as a list of lists
+
+    # Prepare data for tabulate
+    table_data = [[index + 1, row[0], row[1]]
+                  for index, row in enumerate(homes) if len(row) >= 2]
+    headers = [f"{Fore.CYAN}No.{Style.RESET_ALL}", f"{Fore.LIGHTYELLOW_EX}Care"
+               "Home{Style.RESET_ALL}",
+               f"{Fore.LIGHTYELLOW_EX}Address{Style.RESET_ALL}"]
+
+    # Print the table
+    print("\nCare Homes Available:\n")
+    print(tabulate(table_data, headers=headers, tablefmt="fancy_grid"))
+
     return homes
 
 # Select care home
