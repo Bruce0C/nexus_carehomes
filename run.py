@@ -36,6 +36,12 @@ b_names = SHEET.worksheet('brookway')
 now = datetime.now
 colour = Fore
 
+# Dictionary to track the number of pills administered per user
+medication_log = {
+    "red_pill": 0,
+    "blue_pill": 0,
+}
+
 # print to test API function
 # print(care_homes)
 # print(medication)
@@ -292,18 +298,12 @@ def administer_medication(selected_user):
     The medications are a choice between the red pill, blue pill, and green pill.
     Each pill can be administered a maximum of 2 times per day.
     """
-    # Dictionary to track the number of pills administered per user
-    medication_log = {
-        "red_pill": 0,
-        "blue_pill": 0,
-        "green_pill": 0
-    }
+
     print(f"Administering medication for {selected_user}...\n")
     while True:
         print("Available medications:")
         print("1. Red Pill")
         print("2. Blue Pill")
-        print("3. Green Pill")
         print("0. Exit")
 
 
