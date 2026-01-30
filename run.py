@@ -192,7 +192,7 @@ def select_service_user(selected_home):
     Displays service users based on the selected home and allows the user
     to choose a service user or return to the care homes menu.
     """
-    print("0. Return to care homes")
+
     if selected_home == f_names:
         print(
             f"\n{Fore.YELLOW}Select a service user"
