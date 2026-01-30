@@ -59,14 +59,14 @@ def log_user_login():
     else:
         greeting = "Good evening"
 
-    print(f'{Fore.GREEN}{greeting}{Style.RESET_ALL}! Please enter your name to'
-          ' begin.\n')
+    print(f"{Fore.GREEN}{greeting}{Style.RESET_ALL}!"
+          f"{Fore.YELLOW}Please enter your name to begin.{Style.RESET_ALL}")
 
-    name_str = input("Enter your name here: ")
+    name_str = input("\nEnter your name here: ")
     print('\nName logged succesefully.\n')
     print(
-        f"Welcome {Fore.GREEN}{name_str}{Style.RESET_ALL}. Please select a"
-        " care home\n")
+        f"Welcome {Fore.GREEN}{name_str}{Style.RESET_ALL}."
+        f"{Fore.YELLOW}Please select a care home{Style.RESET_ALL}")
     return name_str  # Returns user name
 
 # Update users worksheet to log user
