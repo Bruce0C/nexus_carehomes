@@ -84,8 +84,8 @@ def update_user_worksheet(name_str):
 
 def get_care_homes():
     """
-    Collects column of data from home worksheet and prints it in a table
-    format.
+    Collects column of data from home worksheet and prints it in
+    a simple_grid table format.
     """
     homes = care_homes.get_all_values()  # Fetches all rows as a list of lists
 
@@ -96,9 +96,9 @@ def get_care_homes():
                "Home{Style.RESET_ALL}",
                f"{Fore.LIGHTYELLOW_EX}Address{Style.RESET_ALL}"]
 
-    # Print the table
+    # Print the table in simple_grid format
     print("\nCare Homes Available:\n")
-    print(tabulate(table_data, headers=headers, tablefmt="fancy_grid"))
+    print(tabulate(table_data, headers=headers, tablefmt="simple_grid"))
 
     return homes
 
