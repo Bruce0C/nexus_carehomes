@@ -60,12 +60,12 @@ def log_user_login():
         greeting = "Good evening"
 
     print(f"{Fore.GREEN}{greeting}{Style.RESET_ALL}!"
-          f"{Fore.YELLOW}Please enter your name to begin.{Style.RESET_ALL}")
+          "Please enter your name to begin.")
 
-    name_str = input("\nEnter your name here: ")
-    print('\nName logged succesefully.\n')
+    name_str = input(f"\n{Fore.YELLOW}Enter your name here:{Style.RESET_ALL} ")
+    print(f'\n{Fore.GREEN}Name logged succesefully.{Style.RESET_ALL}')
     print(
-        f"Welcome {Fore.GREEN}{name_str}{Style.RESET_ALL}."
+        f"\nWelcome {Fore.GREEN}{name_str}{Style.RESET_ALL}."
         f"{Fore.YELLOW}Please select a care home{Style.RESET_ALL}")
     return name_str  # Returns user name
 
