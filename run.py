@@ -213,23 +213,30 @@ def select_service_user(selected_home):
         return
     for idx, user in enumerate(service_users, start=1):
         print(f"{idx}. {user}")
-    print("0. Return to care homes\n")
 
     while True:
         try:
             choice = int(
-                input("Enter your choice (1, 2, 3, or 0 to return): \n"))
+                input(f"{Fore.YELLOW}Enter your choice"
+                      f"(1, 2, 3, or 0 to return):{Style.RESET_ALL} "))
             if 1 <= choice <= len(service_users):
-                print(f"You selected {service_users[choice - 1]}.")
-                # You can add further functionality for the selected user here
+                print(
+                    f"{Fore.YELLOW}\nYou selected"
+                    f"{service_users[choice - 1]}.{Style.RESET_ALL}")
+                # Return the selected service user or navigate back to
+                # care homes menu
                 return service_users[choice - 1]
             elif choice == 0:
-                print("Returning to care homes...\n")
+                print(f"{Fore.YELLOW}\nReturning to"
+                      f" care homes...{Style.RESET_ALL}")
                 return select_home()  # Call the select_home function
             else:
-                print("Invalid choice. Please select a valid option.\n")
+                print(
+                    f"{Fore.YELLOW}\nInvalid choice."
+                    f" Please select a valid option.\n{Style.RESET_ALL}")
         except ValueError:
-            print("Invalid input. Please enter a number.\n")
+            print(f"{Fore.RED}\nInvalid input."
+                  f"Please enter a number.\n{Style.RESET_ALL}")
 
 # Service user information options
 
