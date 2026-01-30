@@ -362,7 +362,8 @@ def administer_medication(selected_user):
     Each pill can be administered a maximum of 2 times per day.
     """
     print(
-        f"\n{Fore.GREEN}Administering medication for {selected_user}...{Style.RESET_ALL}")
+        f"\n{Fore.GREEN}Administering medication for {selected_user}"
+        f"...{Style.RESET_ALL}")
 
     while True:
         print("Available medications:")
