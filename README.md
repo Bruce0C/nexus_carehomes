@@ -14,7 +14,7 @@ source: [nexus_carehomes amiresponsive](https://ui.dev/amiresponsive?url=https:/
 
 ## UX
 
-### The 5 Planes of UX
+## The 5 Planes of UX
 
 
 
@@ -56,3 +56,24 @@ source: [nexus_carehomes amiresponsive](https://ui.dev/amiresponsive?url=https:/
 - Analytics and insights,displaying trends or patterns (e.g., frequent medication updates, recurring issues).
 - Mobile-friendly interface, adapting the program for mobile devices or create a web-based version for easier access on the go.
 - User activity logs to track and log user actions (e.g., logins, data updates) for accountability and auditing.
+
+## Features
+- User Login: Users can log in by entering their name, which is stored in the user worksheet.
+- Care Home Management:
+- View a list of care homes and their addresses.
+- Select a care home to view its service users.
+- Service User Management:
+- View a list of service users in a selected care home.
+- Select a service user to view their information.
+- Add notes for a service user.
+- Administer medication to a service user with daily limits.
+- View the daily schedule for a service user.
+- Interactive Menus: Navigate through the application using numbered options.
+- Error Handling: Handles invalid inputs and provides user-friendly error messages.
+- Data Storage: Uses Google Sheets as the backend for storing and retrieving data.
+
+## Technologies Used**
+- Python: The programming language used to build the application.
+- Google Sheets API: Used for data storage and retrieval.
+- Colorama: For adding colors to the terminal output.
+- Tabulate: For displaying data in a tabular format in the terminal.
