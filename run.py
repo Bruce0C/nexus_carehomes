@@ -93,7 +93,7 @@ def get_care_homes():
     table_data = [[index + 1, row[0], row[1]]
                   for index, row in enumerate(homes) if len(row) >= 2]
     headers = [f"{Fore.CYAN}No.{Style.RESET_ALL}", f"{Fore.LIGHTYELLOW_EX}Care"
-               "Home{Style.RESET_ALL}",
+               f"Home{Style.RESET_ALL}",
                f"{Fore.LIGHTYELLOW_EX}Address{Style.RESET_ALL}"]
 
     # Print the table in simple_grid format
@@ -173,8 +173,9 @@ def select_home():
                                "grid"))
                 return b_names
             elif choice == 0:
-                print(f"{Fore.YELLOW}Exiting the program"
-                      f"Goodbye!{Style.RESET_ALL}")
+
+                print(f"\n{Fore.RED}Exiting the program. {Style.RESET_ALL}"
+                      f"{Fore.GREEN}Goodbye!{Style.RESET_ALL}")
                 sys.exit()  # Use sys.exit instead of exit
             else:
                 print(f"\n{Fore.RED}Invalid choice."
@@ -270,7 +271,7 @@ def service_user_information(selected_user):
 
     except gspread.exceptions.WorksheetNotFound:
         print(
-            f"{Fore.GREEN}Worksheet for {selected_user} not found."
+            f"{Fore.RED}Worksheet for {selected_user} not found."
             f"Please check the contact admin for "
             f"further information.{Style.RESET_ALL}")
 
@@ -286,7 +287,9 @@ def service_user_information(selected_user):
                 input(f"\n{Fore.YELLOW}Enter your choice "
                       f"(0, 1, 2, or 3):{Style.RESET_ALL} "))
             if choice == 0:
-                print("\nExiting the program. Goodbye!")
+                print(
+                    f"\n{Fore.RED}Exiting the program."
+                    f" Goodbye!{Style.RESET_ALL}")
                 sys.exit()  # Use sys.exit instead of exit
             elif choice == 1:
                 print(f"{Fore.GREEN}\nInput notes selected.{Style.RESET_ALL}")
