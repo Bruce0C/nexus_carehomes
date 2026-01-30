@@ -192,20 +192,25 @@ def select_service_user(selected_home):
     Displays service users based on the selected home and allows the user
     to choose a service user or return to the care homes menu.
     """
+    print("0. Return to care homes")
     if selected_home == f_names:
-        print("Please select a service user from Farhaven:\n")
+        print(
+            f"\n{Fore.YELLOW}Select a service user"
+            f"from Farhaven:{Style.RESET_ALL}")
         service_users = ["Mike", "Donald", "Tom"]
     elif selected_home == t_names:
-        print("Please select a service user from Tenville:")
+        print(
+            f"\n{Fore.YELLOW}Select a service user"
+            f"from Tenville:{Style.RESET_ALL}")
         service_users = ["Ed", "Alice", "Kyle"]
     elif selected_home == b_names:
-        print("Please select  a service user from Brookway:")
+        print(
+            f"\n{Fore.YELLOW}Select a service user"
+            f"from Brookway:{Style.RESET_ALL}")
         service_users = ["Lica", "Gen", "Alice"]
     else:
-        print("Invalid home selected.\n")
+        print(f"\n{Fore.RED}Invalid home selected.{Style.RESET_ALL}")
         return
-
-    print("Service users:\n")
     for idx, user in enumerate(service_users, start=1):
         print(f"{idx}. {user}")
     print("0. Return to care homes\n")
