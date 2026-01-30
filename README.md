@@ -50,19 +50,19 @@ source: [nexus_carehomes amiresponsive](https://ui.dev/amiresponsive?url=https:/
 **Features**
 - User Login: Allow caregivers to log in and track their activities.
 - Care Home Management:
-- View a list of care homes and their addresses.
-- Select a care home to view its service users.
+  - View a list of care homes and their addresses.
+  - Select a care home to view its service users.
 - Service User Management:
-- View a list of service users in a selected care home.
-- Select a service user to view their details.
-- Add notes for a service user.
-- Administer medication to a service user with daily limits.
-- View the daily schedule for a service user.
+  - View a list of service users in a selected care home.
+  - Select a service user to view their details.
+  - Add notes for a service user.
+  - Administer medication to a service user with daily limits.
+  - View the daily schedule for a service user.
 - Error Handling:
-- Handle invalid inputs gracefully.
-- Provide clear error messages for missing or incorrect data.
+  - Handle invalid inputs gracefully.
+  - Provide clear error messages for missing or incorrect data.
 - Data Storage:
-- Use Google Sheets for centralized data storage and retrieval.
+  - Use Google Sheets for centralized data storage and retrieval.
 
 **Content Requirements**
 
@@ -71,18 +71,31 @@ source: [nexus_carehomes amiresponsive](https://ui.dev/amiresponsive?url=https:/
 - Tabular data display for care homes, service users, and schedules.
 - Color-coded messages for better readability (e.g., green for success, red for errors, yellow for warnings).
 
+**3. Structure**
 
-**Possible Future Plans**
-- Add authentication.
-- Time stamps for each note added to the workesheet.
-- Search and filter functionality.
-- Generate daily summary reports for each home, including service user updates, notes and schedules.
-- Intergration with other tools, such as task manager of calenders to sync schedules.
-- Intergration with other tools to enable notifications and reminders for important tasks.
-- Data validation, highliting missing or incomplete data in the worksheet. 
-- Analytics and insights,displaying trends or patterns (e.g., frequent medication updates, recurring issues).
-- Mobile-friendly interface, adapting the program for mobile devices or create a web-based version for easier access on the go.
-- User activity logs to track and log user actions (e.g., logins, data updates) for accountability and auditing.
+**Interaction Design**
+
+- The application follows a linear flow:
+  - User logs in.
+  - User selects a care home.
+  - User selects a service user.
+  - User performs actions (e.g., input notes, administer medication, view schedule).
+  - User exits the program.
+
+**Information Architecture**
+
+- The application is structured around the following key components:
+  - Care Homes: Displays a list of care homes and allows the user to select one.
+  - Service Users: Displays a list of service users for the selected care home.
+  - Service User Information: Displays detailed information about the selected service user and provides options for further actions.
+  - Notes and Medication: Allows users to input notes and administer medication.
+  - Schedules: Displays the daily schedule for the selected service user.
+
+4. Skeleton
+Wireframe The application is a command-line interface (CLI), so the wireframe is represented by the flow of text-based menus and tables. Below is an example of the structure:...
+
+Login Screen:
+
 
 ## Features
 - User Login: Users can log in by entering their name, which is stored in the user worksheet.
@@ -104,3 +117,16 @@ source: [nexus_carehomes amiresponsive](https://ui.dev/amiresponsive?url=https:/
 - Google Sheets API: Used for data storage and retrieval.
 - Colorama: For adding colors to the terminal output.
 - Tabulate: For displaying data in a tabular format in the terminal.
+
+**Possible Future Plans**
+- Add authentication.
+- Time stamps for each note added to the workesheet.
+- Search and filter functionality.
+- Generate daily summary reports for each home, including service user updates, notes and schedules.
+- Intergration with other tools, such as task manager of calenders to sync schedules.
+- Intergration with other tools to enable notifications and reminders for important tasks.
+- Data validation, highliting missing or incomplete data in the worksheet. 
+- Analytics and insights,displaying trends or patterns (e.g., frequent medication updates, recurring issues).
+- Mobile-friendly interface, adapting the program for mobile devices or create a web-based version for easier access on the go.
+- User activity logs to track and log user actions (e.g., logins, data updates) for accountability and auditing.
+
