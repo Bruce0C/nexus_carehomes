@@ -287,9 +287,8 @@ def service_user_information(selected_user):
                 input(f"\n{Fore.YELLOW}Enter your choice "
                       f"(0, 1, 2, or 3):{Style.RESET_ALL} "))
             if choice == 0:
-                print(
-                    f"\n{Fore.RED}Exiting the program."
-                    f" Goodbye!{Style.RESET_ALL}")
+                print(f"\n{Fore.RED}Exiting the program. {Style.RESET_ALL}"
+                      f"{Fore.GREEN}Goodbye!{Style.RESET_ALL}")
                 sys.exit()  # Use sys.exit instead of exit
             elif choice == 1:
                 print(f"{Fore.GREEN}\nInput notes selected.{Style.RESET_ALL}")
@@ -327,22 +326,22 @@ def view_daily_schedule(schedule_worksheet, selected_user):
     """
     Fetches and displays the daily schedule for the selected service user.
     """
-    print("Fetching daily schedule...\n")
+    print(f"\n{Fore.GREEN}Fetching daily schedule...{Style.RESET_ALL}")
     try:
         # Fetch all data from the schedule worksheet
         schedule_data = schedule_worksheet.get_all_records()
         if not schedule_data:
-            print("No schedule data found.\n")
+            print(f"\n{Fore.RED}No schedule data found.\n{Style.RESET_ALL}")
         else:
-            print("Daily Schedule:")
+            print(f"{Fore.LIGHTYELLOW_EX}Daily Schedule:{Style.RESET_ALL}\n")
             for index, record in enumerate(schedule_data, start=1):
                 print(f"Record {index}:")
                 for key, value in record.items():
                     print(f"  {key}: {value}")
                 print("\n")  # Add a blank line between records
     except gspread.exceptions.WorksheetNotFound:
-        print("Schedule worksheet not found. Please check the worksheet"
-              "name.\n")
+        print(f"\n{Fore.RED}Schedule worksheet not found. Please check "
+              f"the worksheet name.{Style.RESET_ALL}\n")
     except gspread.exceptions.APIError as e:
         print(f"An API error occurred while fetching the schedule: {e}\n")
     except gspread.exceptions.GSpreadException as e:
@@ -362,7 +361,8 @@ def administer_medication(selected_user):
     The medications are a choice between the red pill and blue pill.
     Each pill can be administered a maximum of 2 times per day.
     """
-    print(f"Administering medication for {selected_user}...\n")
+    print(
+        f"\n{Fore.GREEN}Administering medication for {selected_user}...{Style.RESET_ALL}")
 
     while True:
         print("Available medications:")
@@ -372,30 +372,42 @@ def administer_medication(selected_user):
 
         try:
             choice = int(
-                input("Enter the number of the pill to administer: \n"))
+                input(f"{Fore.LIGHTYELLOW_EX}Enter the number of the "
+                      f"pill to administer: \n{Style.RESET_ALL}"))
             if choice == 0:
-                print("Returning to service user information menu.\n")
+                print(
+                    f"{Fore.GREEN}Returning to service user "
+                    f"information menu.\n {Style.RESET_ALL}")
                 return  # Exit the function and return to the calling function
             elif choice == 1:
                 if medication_log["red_pill"] < 2:
                     medication_log["red_pill"] += 1
-                    print("1 Red pill administered successfully.\n")
+                    print(
+                        f"{Fore.LIGHTMAGENTA_EX}1 Red pill administered "
+                        f"successfully.\n{Style.RESET_ALL}")
                 else:
                     print(
-                        "You have already administered the maximum of "
-                        "2 red pills today.")
+                        f"{Fore.RED}You have already administered the "
+                        f"maximum of 2 red pills today.{Style.RESET_ALL}\n")
             elif choice == 2:
                 if medication_log["blue_pill"] < 2:
                     medication_log["blue_pill"] += 1
-                    print("1 Blue pill administered successfully.\n")
+                    print(
+                        f"{Fore.LIGHTMAGENTA_EX}1 Blue pill administered "
+                        f"successfully.\n{Style.RESET_ALL}")
                 else:
                     print(
-                        "You have already administered the maximum of"
-                        " 2 blue pills today.\n")
+                        f"{Fore.RED}You have already administered "
+                        f"the maximum of 2 blue pills today.\n"
+                        f"{Style.RESET_ALL}")
             else:
-                print("Invalid choice. Please select a valid option.\n")
+                print(
+                    f"{Fore.RED}Invalid choice. Please select a valid option."
+                    f"\n {Style.RESET_ALL}")
         except ValueError:
-            print("Invalid input. Please enter a number.\n")
+            print(
+                f"{Fore.RED}Invalid input. Please enter a number.\n"
+                f"{Style.RESET_ALL}")
 
     # After the loop ends, return to the service_user_information function
     service_user_information(selected_user)
