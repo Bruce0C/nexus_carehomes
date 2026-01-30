@@ -232,7 +232,7 @@ def select_service_user(selected_home):
                 return select_home()  # Call the select_home function
             else:
                 print(
-                    f"{Fore.YELLOW}\nInvalid choice."
+                    f"{Fore.RED}\nInvalid choice."
                     f" Please select a valid option.\n{Style.RESET_ALL}")
         except ValueError:
             print(f"{Fore.RED}\nInvalid input."
