@@ -221,7 +221,7 @@ def select_service_user(selected_home):
                       f"(1, 2, 3, or 0 to return):{Style.RESET_ALL} "))
             if 1 <= choice <= len(service_users):
                 print(
-                    f"{Fore.YELLOW}\nYou selected "
+                    f"{Fore.GREEN}\nYou selected "
                     f"{service_users[choice - 1]}.{Style.RESET_ALL}")
                 # Return the selected service user or navigate back to
                 # care homes menu
@@ -247,7 +247,7 @@ def service_user_information(selected_user):
     service user and provides options to input notes, administer medication,
     view the daily schedule, or exit the program.
     """
-    print(f"{Fore.GREEN}Fetching information "
+    print(f"\n{Fore.YELLOW}Fetching information "
           F"for {selected_user}...\n{Style.RESET_ALL}")
 
     try:
@@ -275,36 +275,47 @@ def service_user_information(selected_user):
             f"further information.{Style.RESET_ALL}")
 
     while True:
-        print("Options:")
+        print(f"{Fore.YELLOW}Options:{Style.RESET_ALL}")
         print("0. Exit the program")
         print("1. Input notes")
         print("2. Administer medication")
-        print("3. View daily schedule\n")
+        print("3. View daily schedule")
 
         try:
-            choice = int(input("Enter your choice (0, 1, 2, or 3): \n"))
+            choice = int(
+                input(f"\n{Fore.YELLOW}Enter your choice "
+                      f"(0, 1, 2, or 3):{Style.RESET_ALL} "))
             if choice == 0:
-                print("Exiting the program. Goodbye!\n")
+                print("\nExiting the program. Goodbye!")
                 sys.exit()  # Use sys.exit instead of exit
             elif choice == 1:
-                print("Input notes selected.\n")
-                note = input("Enter your note: ")
+                print(f"{Fore.YELLOW}Input notes selected.{Style.RESET_ALL}")
+                note = input(
+                    f"{Fore.YELLOW}Enter your note:{Style.RESET_ALL} ")
                 # Append the note to the worksheet
                 user_worksheet.append_row([note])
-                print("Note added successfully.\n")
+                print(f"{Fore.GREEN}\nNote added successfully"
+                      f"{Style.RESET_ALL}\n")
             elif choice == 2:
-                print("Administer medication selected.")
+                print(
+                    f"{Fore.YELLOW}\nAdminister medication selected."
+                    f"{Style.RESET_ALL}")
                 administer_medication(selected_user)
             elif choice == 3:
-                print("View daily schedule selected.\n")
+                print(f"{Fore.YELLOW}\nView daily schedule selected."
+                      f"{Style.RESET_ALL}")
                 # Open the "schedule" worksheet for the selected user
                 schedule_worksheet = SHEET.worksheet(
                     f"{selected_user.lower()}_schedule")
-                return view_daily_schedule(schedule_worksheet, selected_user)
+                # Pass both arguments
+                view_daily_schedule(schedule_worksheet, selected_user)
             else:
-                print("Invalid choice. Please select a valid option.\n")
+                print(
+                    f"{Fore.RED}\nInvalid choice."
+                    f" Please select a valid option.{Style.RESET_ALL}")
         except ValueError:
-            print("Invalid input. Please enter a number.\n")
+            print(f"{Fore.RED}\nInvalid input."
+                  f"Please enter a number.{Style.RESET_ALL}")
 
 # View daily schedule
 
