@@ -65,9 +65,9 @@ def log_user_login():
     name_str = input(f"\n{Fore.YELLOW}Enter your name here:{Style.RESET_ALL} ")
     print(f'\n{Fore.GREEN}Name logged succesefully.{Style.RESET_ALL}')
     print(
-        f"\nWelcome {Fore.GREEN}{name_str}{Style.RESET_ALL}."
-        f"{Fore.YELLOW}Please select a care home{Style.RESET_ALL}")
+        f"\nWelcome {Fore.GREEN}{name_str}{Style.RESET_ALL}.")
     return name_str  # Returns user name
+
 
 # Update users worksheet to log user
 
@@ -110,32 +110,34 @@ def select_home():
     This function displays care home options using data from the 'home'
     worksheet and returns the selected home name or ends the program.
     """
-    print("Select a care home:\n")
+    print(f"{Fore.YELLOW}Select a care home:{Style.RESET_ALL}")
+    print("0. Exit")
     print("1. Farhaven")
     print("2. Tenville")
-    print("3. Brookway")
-    print("0. Exit\n")
+    print("3. Brookway\n")
 
     while True:
         try:
-            choice = int(
-                input("Enter your choice (1, 2, 3, or 0 to exit): \n"))
+            choice = int(input(
+                f"{Fore.YELLOW}Enter your choice (1, 2, 3, or 0 to exit):"
+                f"{Style.RESET_ALL} "))
             if choice == 1:
-                print("Farhaven selected.\n")
-                # Fetch all values from Farhaven worksheet
+                print(f"{Fore.GREEN}\nFarhaven selected.{Style.RESET_ALL}")
                 data = f_names.get_all_values()
-                print("Service users living in Farhaven:\n")
-                for row in data:
-                    print(row)
+                print("\nService users living in Farhaven:")
+                # Extract the first row as headers
+                headers = data[0]
+                # Exclude the first row (headers) from the data
+                data = data[1:]
+                # Filter out empty rows
+                data = [row for row in data if any(row)]
+                # Prepare data for tabulate
+                table_data = [[index + 1] +
+                              row for index, row in enumerate(data)]
+                # Print the table in simple_grid format
+                print(tabulate(table_data, headers=headers, tablefmt="simple_"
+                               "grid"))
                 return f_names
-            elif choice == 2:
-                print("Tenville selected.")
-                # Fetch all values from Tenville worksheet
-                data = t_names.get_all_values()
-                print("Service users living in Tenville :\n")
-                for row in data:
-                    print(row)
-                return t_names
             elif choice == 3:
                 print("Brookway selected.\n")
                 # Fetch all values from Brookway worksheet
