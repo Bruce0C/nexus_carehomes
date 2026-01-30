@@ -289,20 +289,20 @@ def service_user_information(selected_user):
                 print("\nExiting the program. Goodbye!")
                 sys.exit()  # Use sys.exit instead of exit
             elif choice == 1:
-                print(f"{Fore.YELLOW}Input notes selected.{Style.RESET_ALL}")
+                print(f"{Fore.GREEN}\nInput notes selected.{Style.RESET_ALL}")
                 note = input(
-                    f"{Fore.YELLOW}Enter your note:{Style.RESET_ALL} ")
+                    f"{Fore.YELLOW}\nEnter your note:{Style.RESET_ALL} ")
                 # Append the note to the worksheet
                 user_worksheet.append_row([note])
                 print(f"{Fore.GREEN}\nNote added successfully"
                       f"{Style.RESET_ALL}\n")
             elif choice == 2:
                 print(
-                    f"{Fore.YELLOW}\nAdminister medication selected."
+                    f"{Fore.GREEN}\nAdminister medication selected."
                     f"{Style.RESET_ALL}")
                 administer_medication(selected_user)
             elif choice == 3:
-                print(f"{Fore.YELLOW}\nView daily schedule selected."
+                print(f"{Fore.GREEN}\nView daily schedule selected."
                       f"{Style.RESET_ALL}")
                 # Open the "schedule" worksheet for the selected user
                 schedule_worksheet = SHEET.worksheet(
