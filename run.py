@@ -43,12 +43,6 @@ medication_log = {
     "blue_pill": 0,
 }
 
-# print to test API function
-# print(care_homes)
-# print(medication)
-# print(schedule)
-# print(daily_notes)
-
 # Log user
 
 
@@ -362,7 +356,7 @@ def main():
 
 
 # Greetings message
-print(f"Welcome to {Fore.GREEN}Nexus Carehome{Style.RESET_ALL},")
+print(f"Welcome to {Fore.GREEN}Nexus Carehome{Style.RESET_ALL}!")
 print("Your digital assistant to help inform your working day!\n")
 
 # Run the program
