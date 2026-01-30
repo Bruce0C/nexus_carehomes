@@ -14,11 +14,11 @@ source: [nexus_carehomes amiresponsive](https://ui.dev/amiresponsive?url=https:/
 
 ## UX
 
-## The 5 Planes of UX
+**The 5 Planes of UX**
 
 
 
-#### 1. Strategy
+**1. Strategy**
 
 **Purpose**
 - Provide care givers simple and effective way to log service user activities and help with documentation.
@@ -44,6 +44,33 @@ source: [nexus_carehomes amiresponsive](https://ui.dev/amiresponsive?url=https:/
 - Enhabce record keeping
 - Simplify decision making
 - Scalability by supporting multiple care homes and using goolge sheets as backend. 
+
+**2. Scope**
+
+**Features**
+- User Login: Allow caregivers to log in and track their activities.
+- Care Home Management:
+- View a list of care homes and their addresses.
+- Select a care home to view its service users.
+- Service User Management:
+- View a list of service users in a selected care home.
+- Select a service user to view their details.
+- Add notes for a service user.
+- Administer medication to a service user with daily limits.
+- View the daily schedule for a service user.
+- Error Handling:
+- Handle invalid inputs gracefully.
+- Provide clear error messages for missing or incorrect data.
+- Data Storage:
+- Use Google Sheets for centralized data storage and retrieval.
+
+**Content Requirements**
+
+- Clear and concise instructions for users.
+- Informative messages for each action (e.g., successful login, invalid input).
+- Tabular data display for care homes, service users, and schedules.
+- Color-coded messages for better readability (e.g., green for success, red for errors, yellow for warnings).
+
 
 **Possible Future Plans**
 - Add authentication.
