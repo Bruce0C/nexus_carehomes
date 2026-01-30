@@ -138,21 +138,51 @@ def select_home():
                 print(tabulate(table_data, headers=headers, tablefmt="simple_"
                                "grid"))
                 return f_names
+            elif choice == 2:
+                print(f"{Fore.GREEN}\nTenville selected.{Style.RESET_ALL}")
+                data = t_names.get_all_values()
+                print("\nService users living in Tenville:")
+                # Extract the first row as headers
+                headers = data[0]
+                # Exclude the first row (headers) from the data
+                data = data[1:]
+                # Filter out empty rows
+                data = [row for row in data if any(row)]
+                # Prepare data for tabulate
+                table_data = [[index + 1] +
+                              row for index, row in enumerate(data)]
+                # Print the table in simple_grid format
+                print(tabulate(table_data, headers=headers, tablefmt="simple_"
+                               "grid"))
+                return t_names
             elif choice == 3:
-                print("Brookway selected.\n")
-                # Fetch all values from Brookway worksheet
+                print(f"{Fore.GREEN}\nBrookway selected.{Style.RESET_ALL}")
                 data = b_names.get_all_values()
-                print("Service users living in Brookway :\n")
-                for row in data:
-                    print(row)
+                print("\nService users living in Brookway:")
+                # Extract the first row as headers
+                headers = data[0]
+                # Exclude the first row (headers) from the data
+                data = data[1:]
+                # Filter out empty rows
+                data = [row for row in data if any(row)]
+                # Prepare data for tabulate
+                table_data = [[index + 1] +
+                              row for index, row in enumerate(data)]
+                # Print the table in simple_grid format
+                print(tabulate(table_data, headers=headers, tablefmt="simple_"
+                               "grid"))
                 return b_names
             elif choice == 0:
-                print("Exiting the program. Goodbye!")
-                exit()  # Exit the program
+                print(f"{Fore.YELLOW}Exiting the program"
+                      f"Goodbye!{Style.RESET_ALL}")
+                sys.exit()  # Use sys.exit instead of exit
             else:
-                print("Invalid choice. Please enter 1, 2, 3, or 0.\n")
+                print(f"\n{Fore.RED}Invalid choice."
+                      f" Please enter 1, 2, 3, or 0.")
         except ValueError:
-            print("Invalid input. Please enter a number (1, 2, 3, or 0).\n")
+            print(
+                f"\n{Fore.RED}Invalid input."
+                f" Please enter a number (1, 2, 3, or 0).{Style.RESET_ALL}")
 
 # Select service user
 
