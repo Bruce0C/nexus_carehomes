@@ -221,14 +221,14 @@ def select_service_user(selected_home):
                       f"(1, 2, 3, or 0 to return):{Style.RESET_ALL} "))
             if 1 <= choice <= len(service_users):
                 print(
-                    f"{Fore.YELLOW}\nYou selected"
+                    f"{Fore.YELLOW}\nYou selected "
                     f"{service_users[choice - 1]}.{Style.RESET_ALL}")
                 # Return the selected service user or navigate back to
                 # care homes menu
                 return service_users[choice - 1]
             elif choice == 0:
-                print(f"{Fore.YELLOW}\nReturning to"
-                      f" care homes...{Style.RESET_ALL}")
+                print(f"{Fore.YELLOW}\nReturning to "
+                      f"care homes...{Style.RESET_ALL}")
                 return select_home()  # Call the select_home function
             else:
                 print(
@@ -240,8 +240,6 @@ def select_service_user(selected_home):
 
 # Service user information options
 
-
-# ...existing code...
 
 def service_user_information(selected_user):
     """
