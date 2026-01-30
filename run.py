@@ -249,7 +249,8 @@ def service_user_information(selected_user):
     service user and provides options to input notes, administer medication,
     view the daily schedule, or exit the program.
     """
-    print(f"Fetching information for {selected_user}...\n")
+    print(f"{Fore.GREEN}Fetching information "
+          F"for {selected_user}...\n{Style.RESET_ALL}")
 
     try:
         # Open the worksheet corresponding to the selected user
@@ -258,18 +259,22 @@ def service_user_information(selected_user):
         data = user_worksheet.get_all_records()
 
         if not data:
-            print(f"No data found in the worksheet for {selected_user}.")
+            print(
+                f"{Fore.GREEN}No data found in the worksheet "
+                f"for {selected_user}.{Style.RESET_ALL}")
         else:
-            print(f"Information for {selected_user}:\n")
+            print(f"{Fore.GREEN}Information for"
+                  f" {selected_user}:{Style.RESET_ALL}\n")
             for record in data:
                 for key, value in record.items():
                     print(f"{key}: {value}")
-                print("\n")  # Add a blank line between records
+                print("\n")  # Adds a blank line between records
 
     except gspread.exceptions.WorksheetNotFound:
         print(
-            f"Worksheet for {selected_user} not found. Please check the"
-            " worksheet name.\n")
+            f"{Fore.GREEN}Worksheet for {selected_user} not found."
+            f"Please check the contact admin for "
+            f"further information.{Style.RESET_ALL}")
 
     while True:
         print("Options:")
