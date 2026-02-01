@@ -95,7 +95,30 @@ source: [nexus_carehomes amiresponsive](https://ui.dev/amiresponsive?url=https:/
 Wireframe The application is a command-line interface (CLI), so the wireframe is represented by the flow of text-based menus and tables. Below is an example of the structure:...
 
 Login Screen:
+Care Home Selection:
+Service User Selection:
+Service User Information:
+Daily Schedule:
 
+**5. Surface**
+**Visual Design**
+
+- Color Scheme:
+  - Green: Success messages (e.g., successful login, successful note addition).
+  - Yellow: Warnings or prompts (e.g., menu options, input prompts).
+  - Red: Error messages (e.g., invalid input, worksheet not found).
+- Typography:
+  - The application uses the default terminal font.
+  - Text is formatted with Colorama for color and Tabulate for table formatting.
+- User Feedback
+ - The application provides immediate feedback for every action:
+  - Success messages for completed actions.
+- Error messages for invalid inputs or issues.
+- Clear instructions for navigating menus and performing actions.
+- Interaction Flow
+
+- The user interacts with the application by entering numeric inputs to navigate menus and perform actions.
+- The application uses a loop to ensure the user can retry if they make an invalid input.
 
 ## Features
 - User Login: Users can log in by entering their name, which is stored in the user worksheet.

@@ -43,6 +43,13 @@ medication_log = {
     "blue_pill": 0,
 }
 
+
+def clear():
+    """
+    Clear the console screen.
+    """
+    print("\033c")
+
 # Log user
 
 
@@ -60,7 +67,7 @@ def log_user_login():
         greeting = "Good evening"
 
     print(f"{Fore.GREEN}{greeting}{Style.RESET_ALL}!"
-          "Please enter your name to begin.")
+          "Please enter your username to begin.")
 
     name_str = input(f"\n{Fore.YELLOW}Enter your name here:{Style.RESET_ALL} ")
     print(f'\n{Fore.GREEN}Name logged succesefully.{Style.RESET_ALL}')
@@ -376,13 +383,16 @@ def administer_medication(selected_user):
                 input(f"{Fore.LIGHTYELLOW_EX}Enter the number of the "
                       f"pill to administer: \n{Style.RESET_ALL}"))
             if choice == 0:
+                clear()
                 print(
                     f"{Fore.GREEN}Returning to service user "
                     f"information menu.\n {Style.RESET_ALL}")
                 return  # Exit the function and return to the calling function
             elif choice == 1:
+
                 if medication_log["red_pill"] < 2:
                     medication_log["red_pill"] += 1
+                    clear()
                     print(
                         f"{Fore.LIGHTMAGENTA_EX}1 Red pill administered "
                         f"successfully.\n{Style.RESET_ALL}")
@@ -393,6 +403,7 @@ def administer_medication(selected_user):
             elif choice == 2:
                 if medication_log["blue_pill"] < 2:
                     medication_log["blue_pill"] += 1
+                    clear()
                     print(
                         f"{Fore.LIGHTMAGENTA_EX}1 Blue pill administered "
                         f"successfully.\n{Style.RESET_ALL}")
@@ -434,4 +445,5 @@ print(f"Welcome to {Fore.GREEN}Nexus Carehome{Style.RESET_ALL}!")
 print("Your digital assistant to help inform your working day!\n")
 
 # Run the program
+clear()
 main()
