@@ -183,15 +183,15 @@ Description: Add alerts for critical service user conditions (e.g., missed medic
 |[Colorama](https://pypi.org/project/colorama/)| For adding colors to the terminal output.|
 |[Tabulate](https://pypi.org/project/tabulate/)| For displaying data in a tabular format in the terminal.|
 
-**Possible Future Plans**
-- Add authentication.
-- Time stamps for each note added to the workesheet.
-- Search and filter functionality.
-- Generate daily summary reports for each home, including service user updates, notes and schedules.
-- Intergration with other tools, such as task manager of calenders to sync schedules.
-- Intergration with other tools to enable notifications and reminders for important tasks.
-- Data validation, highliting missing or incomplete data in the worksheet. 
-- Analytics and insights,displaying trends or patterns (e.g., frequent medication updates, recurring issues).
-- Mobile-friendly interface, adapting the program for mobile devices or create a web-based version for easier access on the go.
-- User activity logs to track and log user actions (e.g., logins, data updates) for accountability and auditing.
+## Database Design
+
+### Data Model
+
+#### Flowchart
+
+To follow best practice, a flowchart was created for the app's logic, and mapped out using a free version of [Lucidchart](https://www.lucidchart.com/pages/landing?utm_source=google&utm_medium=cpc&utm_campaign=_chart_en_tier1_mixed_search_brand_exact_&km_CPC_CampaignId=1490375427&km_CPC_AdGroupID=55688909257&km_CPC_Keyword=lucid%20chart&km_CPC_MatchType=e&km_CPC_ExtensionID=&km_CPC_Network=g&km_CPC_AdPosition=&km_CPC_Creative=442433236001&km_CPC_TargetID=kwd-55720648523&km_CPC_Country=9207727&km_CPC_Device=c&km_CPC_placement=&km_CPC_target=&gad_source=1&gad_campaignid=1490375427&gbraid=0AAAAADLdSjCZdVLtLZlGkXsJxpLxrrH5v&gclid=Cj0KCQiAkPzLBhD4ARIsAGfah8gYdAgpF23HWd-02e0-2pXGsdTNgShyvfqkr9xda1MTZY-jis3vvhoaAsZhEALw_wcB). The flowchart below represents the main process of this Python program. It shows the entire cycle of the application.
+
+![screenshot](documentation/flowchart.png)
+
+Source: [Mermaid Flowchart for Nexus care homes ](https://mermaid.live/edit#pako:eNp9VNFyojAU_ZVMnm1HalHhYWcUtGpbd6fu9qHgQ5ZcNbOQOCHYuuq_b4igoM7yAuGcc8-59zLscCQoYBcvYvEZrYhU6KcfcqSvXjBT-jxHd3ffUD94EUv0KwWJ9APj8yOnn4P7dxIziqYkgT3yAp-l65hskUckoJFIIK2Rx3xTofdDfgQ9Y-MHM4ghUmdxofUrRmO-ztQeDU5OM5AbFoGJl9YEgy-mmR9Bfkc_pFhKktQIZZqipl_GGZg4wzJO1aHQD68TPd1MpNGFkAlRTPCa9g1UJjlSojIqPcAq5SLesIz3ZFCfKIJ6G8Ji8jvWwxyd_L-vc7dyFkf2VKArQVlvVLhpFzQVKs8xDirHeZXWownjLFW6tVegLDKd7dEkuAnUpO8MPnUKFusRRSugWZ7iObjxuiYr1limHRf9KEA9SoGiWRZFkKaLLI63pqszayClkDmN8aXpRXdW1plcr3BiBd4Koj9FmheWMDWvsi82Mikwy4CGjt6A5E2cghTgeSToPKiCdiQ-395qFfzfEi8-c9zAS8kodpXMoIET0N9gfsS7nB5itYIEQuzqRwoLksUqxCE_aNma8A8hklIpRbZcYXdB4lSfsjUlCnxGcpMTBTgF6YmMK-zapgJ2d_gLu1373mlZbdt5dFqtZsdxGnir39471kPL6rZbjw-21W52Dg3811g2NdK1HLvZdDTBbnd0NT04JeTr8Udl_leHf6GMf4c)
 
