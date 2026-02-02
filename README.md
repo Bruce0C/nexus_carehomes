@@ -417,3 +417,40 @@ A credentials file in `.JSON` format from the Google Cloud Platform is also mand
 19. Copy the `client_email` that is in the `creds.json` file.
 20. Share your Google Sheet to the `client_email`, ensuring "Editing" is enabled.
 21. Add the `creds.json` file to your `.gitignore` file, so as not to push your credentials to GitHub publicly.
+
+### Local Development
+
+This project can be cloned or forked in order to make a local copy on your own system.
+
+For either method, you will need to install any applicable packages found within the [requirements.txt](requirements.txt) file.
+
+- `pip3 install -r requirements.txt`.
+
+If using any confidential credentials, such as `CREDS.json` or `env.py` data, these will need to be manually added to your own newly created project as well.
+
+#### Cloning
+
+You can clone the repository by following these steps:
+
+1. Go to the [GitHub repository](https://www.github.com/Bruce0C/nexus_carehomes).
+2. Locate and click on the green "Code" button at the very top, above the commits and files.
+3. Select whether you prefer to clone using "HTTPS", "SSH", or "GitHub CLI", and click the "copy" button to copy the URL to your clipboard.
+4. Open "Git Bash" or "Terminal".
+5. Change the current working directory to the location where you want the cloned directory.
+6. In your IDE Terminal, type the following command to clone the repository:
+	- `git clone https://www.github.com/Bruce0C/nexus_carehomes.git`
+7. Press "Enter" to create your local clone.
+
+Alternatively, if using Ona (formerly Gitpod), you can click below to create your own workspace using this repository.
+
+[![Open in Ona-Gitpod](https://ona.com/run-in-ona.svg)](https://gitpod.io/#https://www.github.com/Bruce0C/nexus_carehomes)
+
+**Please Note**: in order to directly open the project in Ona (Gitpod), you should have the browser extension installed. A tutorial on how to do that can be found [here](https://www.gitpod.io/docs/configure/user-settings/browser-extension).
+
+#### Forking
+
+By forking the GitHub Repository, you make a copy of the original repository on our GitHub account to view and/or make changes without affecting the original owner's repository. You can fork this repository by using the following steps:
+
+1. Log in to GitHub and locate the [GitHub Repository](https://www.github.com/Bruce0C/nexus_carehomes).
+2. At the top of the Repository, just below the "Settings" button on the menu, locate and click the "Fork" Button.
+3. Once clicked, you should now have a copy of the original repository in your own GitHub account!
