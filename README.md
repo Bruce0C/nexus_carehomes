@@ -154,7 +154,22 @@ Daily Schedule:
 |Error Handling: | Handles invalid inputs and provides user-friendly error messages. | [screenshot](documentation/features/data-validation.png)|
 |Data Storage: | Uses Google Sheets as the backend for storing and retrieving data. | [screenshot](documentation/features/data-validation.png) |
 
-## Technologies Used**
+**Future Features**
+- **User Authentication**: Add a login system with usernames and passwords for caregivers to ensure secure access to the application.
+- **Role-Based Access Control**: Implement different user roles (e.g., caregiver, manager, admin) with varying levels of access.
+- **Reporting and Analytics**: Generate reports and analytics for managers, such as:
+   - Total notes added per caregiver.
+   - Medication logs for each service user.
+   - Summary of daily activities.
+- **Notifications and Reminders**: Add notifications and reminders for caregivers about upcoming tasks, medication schedules, or important notes.
+- **Search and Filter Functionality**: Allow users to search for specific service users, notes, or care homes and filter data based on criteria (e.g., age, room number, or activity type).
+- **Export Data**: Allow users to export data (e.g., notes, schedules, or reports) to CSV or PDF files for offline use or sharing.
+- **Customizable Schedules**: Allow caregivers or managers to customize the daily schedules for service users.
+- **Service User Alerts**:
+Description: Add alerts for critical service user conditions (e.g., missed medication, overdue tasks).
+
+
+## Technologies Used
 - Python: The programming language used to build the application.
 - Google Sheets API: Used for data storage and retrieval.
 - Colorama: For adding colors to the terminal output.
