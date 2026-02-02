@@ -169,11 +169,19 @@ Daily Schedule:
 Description: Add alerts for critical service user conditions (e.g., missed medication, overdue tasks).
 
 
-## Technologies Used
-- Python: The programming language used to build the application.
-- Google Sheets API: Used for data storage and retrieval.
-- Colorama: For adding colors to the terminal output.
-- Tabulate: For displaying data in a tabular format in the terminal.
+## Tools & Technologies
+
+| Tool / Tech | Use |
+| --- | --- |
+| [![Markdown Builder](https://img.shields.io/badge/Markdown_Builder-grey?logo=markdown&logoColor=000000)](https://markdown.2bn.dev) | Generate README and TESTING templates. |
+| [![Git](https://img.shields.io/badge/Git-grey?logo=git&logoColor=F05032)](https://git-scm.com) | Version control. (`git add`, `git commit`, `git push`) |
+| [![Github](https://img.shields.io/badge/GitHub-grey?logo=github&logoColor=181717)](https://github.com) | Secure online code storage. |
+| [![Python](https://img.shields.io/badge/Python-grey?logo=python&logoColor=3776AB)](https://www.python.org) | Back-end programming language. |
+| [![Heroku](https://img.shields.io/badge/Heroku-grey?logo=heroku&logoColor=430098)](https://www.heroku.com) | Hosting the deployed back-end site. |
+| [![Lucidchart](https://img.shields.io/badge/Lucidchart-grey?logo=lucid&logoColor=F97B2C)](https://www.lucidchart.com) | Flow diagrams for mapping the app's logic.|
+[![Google Sheets API](https://simpleicons.org/icons/googlesheets.svg)](https://developers.google.com/workspace/sheets/api/reference/rest) | Used for data storage and retrieval.|
+|[Colorama](https://pypi.org/project/colorama/)| For adding colors to the terminal output.|
+|[Tabulate](https://pypi.org/project/tabulate/)| For displaying data in a tabular format in the terminal.|
 
 **Possible Future Plans**
 - Add authentication.
