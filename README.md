@@ -7,7 +7,7 @@ Developer: Bruce Chibisa ([Bruce0C](https://www.github.com/Bruce0C))
 [![GitHub repo size](https://img.shields.io/github/repo-size/Bruce0C/nexus_carehomes)](https://www.github.com/Bruce0C/nexus_carehomes)
 [![badge](https://img.shields.io/badge/deployment-Heroku-purple)](https://nexus-care-e0ddbf0b6681.herokuapp.com)
 
-![screenshot](documentation/mockup.png)
+![screenshot](assets/images/welcome_message.jpeg)
 
 source: [nexus_carehomes amiresponsive](https://ui.dev/amiresponsive?url=https://nexus-care-e0ddbf0b6681.herokuapp.com)
 
@@ -41,42 +41,48 @@ source: [nexus_carehomes amiresponsive](https://ui.dev/amiresponsive?url=https:/
 - Reduce the amount of time it takes to write notes.
 - Improve the legibility of notes.  
 - Centralized data management
-- Enhabce record keeping
+- Enhance record keeping
 - Simplify decision making
-- Scalability by supporting multiple care homes and using goolge sheets as backend. 
+- Scalability by supporting multiple care homes by storing data using goolge sheets. 
 
 **2. Scope**
 
 **Features**
-- User Login: Allow caregivers to log in and track their activities.
-- Care Home Management:
-  - View a list of care homes and their addresses.
-  - Select a care home to view its service users.
-- Service User Management:
-  - View a list of service users in a selected care home.
-  - Select a service user to view their details.
-  - Add notes for a service user.
-  - Administer medication to a service user with daily limits.
-  - View the daily schedule for a service user.
-- Error Handling:
-  - Handle invalid inputs gracefully.
-  - Provide clear error messages for missing or incorrect data.
-- Data Storage:
-  - Use Google Sheets for centralized data storage and retrieval.
+## Features
 
-**Content Requirements**
+| Features | Notes| Screenshots |
+| --- | --- | --- |
+|User Login| Users can log in by entering their name, which is stored in the user worksheet. | ![screenshot](assets/images/log_username.jpeg)|
+|Care Home Management| View a list of care homes and their addresses. | ![screenshot](assets/images/care_home_list.jpeg)|
+|Service User Management: | View a list of service users in a selected care home. | ![screenshot](assets/images/available_service_users.jpeg)|
+| | Select a service user to view their information. | ![screenshot](assets/images/service_user_info.jpeg)|
+| | Add notes for a service user. | ![screenshot](assets/images/input_notes_full_view.jpeg)|
+| | Administer medication to a service user with daily limits. | ![screenshot](assets/images/administer_medication.jpeg)|
+| | View the daily schedule for a service user. | ![screenshot](assets/images/service_user_schedule.jpeg)|
+|Interactive Menus: | Navigate through the application using numbered options. | ![screenshot](assets/images/service_user_select.jpeg)|
+|Error Handling: | Handles invalid inputs and provides user-friendly error messages. | ![screenshot](assets/images/invalid_menu_choice.jpeg)|
+|Data Storage: | Uses Google Sheets as the backend for storing and retrieving data. | ![screenshot](assets/images/google_sheet.jpeg)|
 
-- Clear and concise instructions for users.
-- Informative messages for each action (e.g., successful login, invalid input).
-- Tabular data display for care homes, service users, and schedules.
-- Color-coded messages for better readability (e.g., green for success, red for errors, yellow for warnings).
+**Future Features**
+- **User Authentication**: Add a login system with usernames and passwords for caregivers to ensure secure access to the application.
+- **Role-Based Access Control**: Implement different user roles (e.g., caregiver, manager, admin) with varying levels of access.
+- **Reporting and Analytics**: Generate reports and analytics for managers, such as:
+   - Total notes added per caregiver.
+   - Medication logs for each service user.
+   - Summary of daily activities.
+- **Notifications and Reminders**: Add notifications and reminders for caregivers about upcoming tasks, medication schedules, or important notes.
+- **Search and Filter Functionality**: Allow users to search for specific service users, notes, or care homes and filter data based on criteria (e.g., age, room number, or activity type).
+- **Export Data**: Allow users to export data (e.g., notes, schedules, or reports) to CSV or PDF files for offline use or sharing.
+- **Customizable Schedules**: Allow caregivers or managers to customize the daily schedules for service users.
+- **Service User Alerts**:
+Description: Add alerts for critical service user conditions (e.g., missed medication, overdue tasks).
 
 **3. Structure**
 
 **Interaction Design**
 
 - The application follows a linear flow:
-  - User logs in.
+  - Username logged to sheet.
   - User selects a care home.
   - User selects a service user.
   - User performs actions (e.g., input notes, administer medication, view schedule).
@@ -103,19 +109,19 @@ Daily Schedule:
 **5. Surface**
 **Visual Design**
 
-- Color Scheme:
+- **Colour Scheme:**
   - Green: Success messages (e.g., successful login, successful note addition).
-  - Yellow: Warnings or prompts (e.g., menu options, input prompts).
+  - Yellow: Prompts (e.g., menu options, input prompts).
   - Red: Error messages (e.g., invalid input, worksheet not found).
-- Typography:
+- **Typography:**
   - The application uses the default terminal font.
-  - Text is formatted with Colorama for color and Tabulate for table formatting.
-- User Feedback
- - The application provides immediate feedback for every action:
+  - Text is formatted with [colorama](https://pypi.org/project/colorama/) for color and [Tabular](https://pypi.org/project/tabula-py/) for table formatting.
+- **User Feedback**
+  - The application provides immediate feedback for every action:
   - Success messages for completed actions.
-- Error messages for invalid inputs or issues.
-- Clear instructions for navigating menus and performing actions.
-- Interaction Flow
+  - Error messages for invalid inputs or issues.
+  - Clear instructions for navigating menus and performing actions.
+  - Interaction Flow
 
 - The user interacts with the application by entering numeric inputs to navigate menus and perform actions.
 - The application uses a loop to ensure the user can retry if they make an invalid input.
@@ -136,37 +142,6 @@ Daily Schedule:
 | As a manager | I want all data to be stored in a centralized Google Sheet | so that I can monitor and analyze the activities of caregivers and service users. 
 | As a business owner | I want the system to support multiple care homes and service users | so that it can scale as my business grows. 
 | As a caregiver | I want the application to be simple and easy to use | so that I can quickly navigate and perform my tasks without confusion. |
-
-
-## Features
-
-| Features | Notes| Screenshots |
-| --- | --- | --- |
-|User Login| Users can log in by entering their name, which is stored in the user worksheet. | [screenshot](documentation/features/data-validation.png)|
-|Care Home Management| View a list of care homes and their addresses. | [screenshot](documentation/features/data-validation.png)|
-| |Select a care home to view its service users. | [screenshot](documentation/features/data-validation.png)|
-|Service User Management: | View a list of service users in a selected care home. | [screenshot](documentation/features/data-validation.png) |
-| | Select a service user to view their information. | [screenshot](documentation/features/data-validation.png)|
-| | Add notes for a service user. | [screenshot](documentation/features/data-validation.png) |
-| | Administer medication to a service user with daily limits. | [screenshot](documentation/features/data-validation.png)|
-| | View the daily schedule for a service user. | [screenshot](documentation/features/data-validation.png)|
-|Interactive Menus: | Navigate through the application using numbered options. | [screenshot](documentation/features/data-validation.png)|
-|Error Handling: | Handles invalid inputs and provides user-friendly error messages. | [screenshot](documentation/features/data-validation.png)|
-|Data Storage: | Uses Google Sheets as the backend for storing and retrieving data. | [screenshot](documentation/features/data-validation.png) |
-
-**Future Features**
-- **User Authentication**: Add a login system with usernames and passwords for caregivers to ensure secure access to the application.
-- **Role-Based Access Control**: Implement different user roles (e.g., caregiver, manager, admin) with varying levels of access.
-- **Reporting and Analytics**: Generate reports and analytics for managers, such as:
-   - Total notes added per caregiver.
-   - Medication logs for each service user.
-   - Summary of daily activities.
-- **Notifications and Reminders**: Add notifications and reminders for caregivers about upcoming tasks, medication schedules, or important notes.
-- **Search and Filter Functionality**: Allow users to search for specific service users, notes, or care homes and filter data based on criteria (e.g., age, room number, or activity type).
-- **Export Data**: Allow users to export data (e.g., notes, schedules, or reports) to CSV or PDF files for offline use or sharing.
-- **Customizable Schedules**: Allow caregivers or managers to customize the daily schedules for service users.
-- **Service User Alerts**:
-Description: Add alerts for critical service user conditions (e.g., missed medication, overdue tasks).
 
 
 ## Tools & Technologies
@@ -468,8 +443,6 @@ By forking the GitHub Repository, you make a copy of the original repository on 
 
 ## Credits
 
-...
-
 ### Content
 
 | Source | Notes |
@@ -480,7 +453,8 @@ By forking the GitHub Repository, you make a copy of the original repository on 
 | [Colorama](https://www.youtube.com/watch?v=u51Zjlnui4Y) | Adding color in Python |
 | [Tabulate](https://www.youtube.com/watch?reload=9&v=5pL2WREyNXE) | Adding tables in terminal |
 | [StackOverflow](https://stackoverflow.com/a/50921841) | Clear screen in Python |
-| [Log mt care](https://www.logmycare.co.uk/care-management-software?utm_term=care%20management%20software&utm_campaign=High+intent&utm_source=adwords&utm_medium=ppc&hsa_acc=8799633146&hsa_cam=23237593405&hsa_grp=187891577469&hsa_ad=782700382458&hsa_src=g&hsa_tgt=kwd-341072370908&hsa_kw=care%20management%20software&hsa_mt=b&hsa_net=adwords&hsa_ver=3&gad_source=1&gad_campaignid=23237593405&gbraid=0AAAAADD45U7Wt78ZGT7oX1spbhw_8tnTV&gclid=Cj0KCQiAkPzLBhD4ARIsAGfah8iKo5RnRopspFrGJUPr05Lxz9w7V9hVH_0HQT2FR8FyGydntk81yRYaAgdbEALw_wcB) | Help with deciding core functionality and used as an example of a fully formed and funtional care home application |
+| [Log my care](https://www.logmycare.co.uk/care-management-software?utm_term=care%20management%20software&utm_campaign=High+intent&utm_source=adwords&utm_medium=ppc&hsa_acc=8799633146&hsa_cam=23237593405&hsa_grp=187891577469&hsa_ad=782700382458&hsa_src=g&hsa_tgt=kwd-341072370908&hsa_kw=care%20management%20software&hsa_mt=b&hsa_net=adwords&hsa_ver=3&gad_source=1&gad_campaignid=23237593405&gbraid=0AAAAADD45U7Wt78ZGT7oX1spbhw_8tnTV&gclid=Cj0KCQiAkPzLBhD4ARIsAGfah8iKo5RnRopspFrGJUPr05Lxz9w7V9hVH_0HQT2FR8FyGydntk81yRYaAgdbEALw_wcB) | Help with deciding core functionality and used as an example of a fully formed and funtional care home application |
+| [ChatGPT](https://chatgpt.com) | Help with generating random names and fictional addresses and scenarios for the service users schedule and notes.|
 
 ### Acknowledgements
 
