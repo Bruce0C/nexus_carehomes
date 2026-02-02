@@ -33,30 +33,136 @@ If the user enters an invalid number or a non-numeric value, the program should 
 
  ### Missing or Incorrect Worksheet Names
 
-**Feature:** Handle missing or incorrect worksheet names in service_user_information()
+**Feature:**
+- Handle missing or incorrect worksheet names in service_user_information()
 
 **Expected:**
 If the worksheet for the selected service user does not exist, the program should display an error message and allow the user to return to the previous menu.
 
 **Testing:**
-Tested with a valid worksheet name (e.g., "farhaven").
-Tested with an invalid worksheet name (e.g., "invalid_user").
-Tested with a missing worksheet (e.g., deleted the worksheet from Google Sheets).
+- Tested with a valid worksheet name (e.g., "farhaven").
+- Tested with an invalid worksheet name (e.g., "invalid_user").
+- Tested with a missing worksheet (e.g., deleted the worksheet from Google Sheets).
 
 **Result:**
-Valid worksheet name: The program successfully fetched and displayed the data.
+- Valid worksheet name: The program successfully fetched and displayed the data.
 Invalid or missing worksheet name: The program displayed the error message:
 "Worksheet for [selected_user] not found. Please contact admin for further information."
 
 **Fix:**
+- No fixes were required as the feature behaved as expected.
+
+ ### Handling Empty or Missing Data
+**Feature:** 
+-Handle empty or missing data in get_care_homes()
+
+**Expected:**
+- If the home worksheet is empty, the program should display a message indicating no care homes are available and return an empty list.
+
+**Testing:**
+- Tested with a populated home worksheet.
+- Tested with an empty home worksheet (manually cleared all rows in the worksheet).
+
+**Result:**
+- Populated worksheet: The program displayed the care homes in a table format.
+- Empty worksheet: The program displayed the message:
+"No care homes found in the database." and returned an empty list.
+
+**Fix:**
+- No fixes were required as the feature behaved as expected.
+
+### Handling Medication Limits
+
+**Feature:** 
+- Enforce daily medication limits in administer_medication()
+
+**Expected:**
+- The program should allow a maximum of 2 pills per type (e.g., red pill, blue pill) to be administered to a service user per day.
+- If the daily limit is reached, the program should display a warning message and prevent further administration.
+
+**Testing:**
+- Administered 1 red pill and 1 blue pill to a service user.
+- Attempted to administer a third red pill after reaching the daily limit.
+- Attempted to administer a third blue pill after reaching the daily limit.
+
+**Result:**
+- First and second pills: The program successfully administered the pills and displayed a success message.
+-Third pill: The program displayed the message:
+"You have already administered the maximum of 2 red pills today." and did not update the medication log.
+
+**Fix:**
+- No fixes were required as the feature behaved as expected.
+
+### Handling API Errors
+
+**Feature:**
+ - Handle API errors in view_daily_schedule()
+ 
+**Expected:**
+- If the Google Sheets API encounters an error (e.g., network issue, API limit), the program should display an error message and allow the user to retry or return to the previous menu.
+
+**Testing:**
+- Simulated an API error by disconnecting from the internet.
+- Simulated an invalid worksheet name to trigger an API error.
+
+**Result:**
+- API error: The program displayed the message:
+"An API error occurred while fetching the schedule: [error details]"
+and allowed the user to retry or return to the previous menu.
+
+**Fix:**
+- No fixes were required as the feature behaved as expected.
+ 
+### Handling Program Exit
+**Feature:**
+ - Graceful program exit in select_home() and service_user_information()
+
+**Expected:**
+- When the user selects the "Exit" option, the program should display a goodbye message and terminate gracefully.
+
+**Testing:**
+- Selected the "Exit" option from the care home menu.
+- Selected the "Exit" option from the service user options menu.
+
+**Result:**
+- The program displayed the message:
+"Exiting the program. Goodbye!"
+and terminated without errors.
+
+**Fix:**
+- No fixes were required as the feature behaved as expected.
+
+### Handling Invalid Menu Choices
+
+**Feature:**
+
+ - Handle invalid menu choices in `select_home()` and `select_service_user()`
+
+**Expected:**
+- If the user enters an invalid menu option, the program should display an error message and prompt the user again.
+
+**Testing:**
+
+- Entered valid menu options (e.g., 1, 2, 3, 0).
+- Entered invalid menu options (e.g., 4, -1, 100).
+- Entered non-numeric inputs (e.g., "abc", "!@#", or left the input blank).
+
+**Result:**
+
+- Valid inputs: The program navigated to the correct menu or exited as expected.
+Invalid inputs: The program displayed the message:
+"Invalid choice. Please enter 1, 2, 3, or 0."
+and prompted the user again.
+- Non-numeric inputs: The program displayed the message:
+"Invalid input. Please enter a number (1, 2, 3, or 0)."
+and prompted the user again.
+Fix:
+
 No fixes were required as the feature behaved as expected.
 
 
 
-
-
 ## User Story Testing
-
 
 
 ## Bugs
