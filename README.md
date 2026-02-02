@@ -229,8 +229,37 @@ flowchart TD
     K -->|No Data Available| H
 
     Z[Exit Program]
-'''
+
+
 Source: [Mermaid Flowchart for Nexus care homes ](https://mermaid.live/edit#pako:eNp9VNFyojAU_ZVMnm1HalHhYWcUtGpbd6fu9qHgQ5ZcNbOQOCHYuuq_b4igoM7yAuGcc8-59zLscCQoYBcvYvEZrYhU6KcfcqSvXjBT-jxHd3ffUD94EUv0KwWJ9APj8yOnn4P7dxIziqYkgT3yAp-l65hskUckoJFIIK2Rx3xTofdDfgQ9Y-MHM4ghUmdxofUrRmO-ztQeDU5OM5AbFoGJl9YEgy-mmR9Bfkc_pFhKktQIZZqipl_GGZg4wzJO1aHQD68TPd1MpNGFkAlRTPCa9g1UJjlSojIqPcAq5SLesIz3ZFCfKIJ6G8Ji8jvWwxyd_L-vc7dyFkf2VKArQVlvVLhpFzQVKs8xDirHeZXWownjLFW6tVegLDKd7dEkuAnUpO8MPnUKFusRRSugWZ7iObjxuiYr1limHRf9KEA9SoGiWRZFkKaLLI63pqszayClkDmN8aXpRXdW1plcr3BiBd4Koj9FmheWMDWvsi82Mikwy4CGjt6A5E2cghTgeSToPKiCdiQ-395qFfzfEi8-c9zAS8kodpXMoIET0N9gfsS7nB5itYIEQuzqRwoLksUqxCE_aNma8A8hklIpRbZcYXdB4lSfsjUlCnxGcpMTBTgF6YmMK-zapgJ2d_gLu1373mlZbdt5dFqtZsdxGnir39471kPL6rZbjw-21W52Dg3811g2NdK1HLvZdDTBbnd0NT04JeTr8Udl_leHf6GMf4c)
 
 
-#### Classes & Functions
+#### Functions
+
+- `log_user_login()`
+  - Purpose: Logs the caregiver's name and stores it in the user worksheet.
+
+- `update_user_worksheet(name_str)`
+  - Purpose: Updates the user worksheet with the caregiver's name.
+
+- `get_care_homes()`
+  - Purpose: Fetches and displays a list of care homes and their addresses.
+
+- `select_home()`
+  - Purpose: Allows the user to select a care home from the displayed list.
+
+- `select_service_user(selected_home)`
+  - Purpose: Displays service users for the selected care home and allows the user to select one.
+
+- `service_user_information(selected_user)`
+  - Purpose: Fetches and displays data for the selected service user and provides options for further actions.
+
+- `view_daily_schedule(schedule_worksheet, selected_user)`
+  - Purpose: Fetches and displays the daily schedule for the selected service user.
+
+- `administer_medication(selected_user)`
+  - Purpose: Allows the caregiver to administer medication to the selected service user.
+
+- `main()`
+  - Purpose: Orchestrates the execution of all program functions.
+
