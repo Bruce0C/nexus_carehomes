@@ -193,5 +193,44 @@ To follow best practice, a flowchart was created for the app's logic, and mapped
 
 ![screenshot](documentation/flowchart.png)
 
+'''mermaid
+flowchart TD
+    A[Start] --> B[Log User Login]
+    B -->|Valid Name| C[Display Care Homes]
+    B -->|Invalid Name| B
+
+    C --> D[Select Care Home]
+    D -->|Valid Input| E[Display Service Users]
+    D -->|Exit| Z[Exit Program]
+    D -->|Invalid Input| D
+
+    E --> F[Select Service User]
+    F -->|Valid Input| G[Display Service User Information]
+    F -->|Return to Care Homes| C
+    F -->|Invalid Input| F
+
+    G -->|Data Available| H[Display Options]
+    G -->|No Data Available| H
+
+    H -->|Input Notes| I[Input Notes]
+    H -->|Administer Medication| J[Administer Medication]
+    H -->|View Daily Schedule| K[View Daily Schedule]
+    H -->|Exit| Z
+
+    I -->|Note Added Successfully| H
+    I -->|Error Adding Note| I
+
+    J -->|Valid Input| J1[Check Daily Limit]
+    J -->|Invalid Input| J
+    J1 -->|Limit Reached| H
+    J1 -->|Medication Administered| H
+
+    K -->|Data Available| H
+    K -->|No Data Available| H
+
+    Z[Exit Program]
+'''
 Source: [Mermaid Flowchart for Nexus care homes ](https://mermaid.live/edit#pako:eNp9VNFyojAU_ZVMnm1HalHhYWcUtGpbd6fu9qHgQ5ZcNbOQOCHYuuq_b4igoM7yAuGcc8-59zLscCQoYBcvYvEZrYhU6KcfcqSvXjBT-jxHd3ffUD94EUv0KwWJ9APj8yOnn4P7dxIziqYkgT3yAp-l65hskUckoJFIIK2Rx3xTofdDfgQ9Y-MHM4ghUmdxofUrRmO-ztQeDU5OM5AbFoGJl9YEgy-mmR9Bfkc_pFhKktQIZZqipl_GGZg4wzJO1aHQD68TPd1MpNGFkAlRTPCa9g1UJjlSojIqPcAq5SLesIz3ZFCfKIJ6G8Ji8jvWwxyd_L-vc7dyFkf2VKArQVlvVLhpFzQVKs8xDirHeZXWownjLFW6tVegLDKd7dEkuAnUpO8MPnUKFusRRSugWZ7iObjxuiYr1limHRf9KEA9SoGiWRZFkKaLLI63pqszayClkDmN8aXpRXdW1plcr3BiBd4Koj9FmheWMDWvsi82Mikwy4CGjt6A5E2cghTgeSToPKiCdiQ-395qFfzfEi8-c9zAS8kodpXMoIET0N9gfsS7nB5itYIEQuzqRwoLksUqxCE_aNma8A8hklIpRbZcYXdB4lSfsjUlCnxGcpMTBTgF6YmMK-zapgJ2d_gLu1373mlZbdt5dFqtZsdxGnir39471kPL6rZbjw-21W52Dg3811g2NdK1HLvZdDTBbnd0NT04JeTr8Udl_leHf6GMf4c)
 
+
+#### Classes & Functions
