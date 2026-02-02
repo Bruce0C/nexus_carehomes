@@ -139,19 +139,20 @@ Daily Schedule:
 
 
 ## Features
-- User Login: Users can log in by entering their name, which is stored in the user worksheet.
-- Care Home Management:
-- View a list of care homes and their addresses.
-- Select a care home to view its service users.
-- Service User Management:
-- View a list of service users in a selected care home.
-- Select a service user to view their information.
-- Add notes for a service user.
-- Administer medication to a service user with daily limits.
-- View the daily schedule for a service user.
-- Interactive Menus: Navigate through the application using numbered options.
-- Error Handling: Handles invalid inputs and provides user-friendly error messages.
-- Data Storage: Uses Google Sheets as the backend for storing and retrieving data.
+
+| Features | Notes| Screenshots |
+| --- | --- | --- |
+|User Login| Users can log in by entering their name, which is stored in the user worksheet. | [screenshot](documentation/features/data-validation.png)|
+|Care Home Management| View a list of care homes and their addresses. | [screenshot](documentation/features/data-validation.png)|
+| |Select a care home to view its service users. | [screenshot](documentation/features/data-validation.png)|
+|Service User Management: | View a list of service users in a selected care home. | [screenshot](documentation/features/data-validation.png) |
+| | Select a service user to view their information. | [screenshot](documentation/features/data-validation.png)|
+| | Add notes for a service user. | [screenshot](documentation/features/data-validation.png) |
+| | Administer medication to a service user with daily limits. | [screenshot](documentation/features/data-validation.png)|
+| | View the daily schedule for a service user. | [screenshot](documentation/features/data-validation.png)|
+|Interactive Menus: | Navigate through the application using numbered options. | [screenshot](documentation/features/data-validation.png)|
+|Error Handling: | Handles invalid inputs and provides user-friendly error messages. | [screenshot](documentation/features/data-validation.png)|
+|Data Storage: | Uses Google Sheets as the backend for storing and retrieving data. | [screenshot](documentation/features/data-validation.png) |
 
 ## Technologies Used**
 - Python: The programming language used to build the application.
