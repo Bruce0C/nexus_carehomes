@@ -120,6 +120,24 @@ Daily Schedule:
 - The user interacts with the application by entering numeric inputs to navigate menus and perform actions.
 - The application uses a loop to ensure the user can retry if they make an invalid input.
 
+| Target | Expectation | Outcome |
+| --- | --- | --- |
+| As a caregiver | I want to log in to the system | so that my activities can be tracked and recorded.. |
+| As a caregiver  | I want to view a list of care homes | so that I can select the care home I am assigned to. |
+| As a caregiver  | I want to select my assigned care home | so that I can view the service users in that care home. |
+| As a caregiver  | I want to view a list of service users in my assigned care home | So that I can choose the service user I am responsible for.|
+| As a caregiver  |I want to select a specific service user | so that I can view their details and manage their information. |
+| As a caregiver  | I want to view detailed information about a service user | so that I can better understand their needs and provide appropriate care.|
+| As a caregiver  | I want to input notes about a service user | so that I can document important information about their care. |
+| As a caregiver | I want to log the medication I administer to a service user | so that I can track the medication history and ensure compliance with dosage limits. 
+| As a caregiver| I want to view the daily schedule for a service user | so that I can plan my day and ensure all activities are completed on time. 
+| As a caregiver | I want to exit the program gracefully | so that I can end my session without losing any data. 
+| As a caregiver | I want the program to handle invalid inputs | so that I can correct my mistakes without the program crashing. 
+| As a manager | I want all data to be stored in a centralized Google Sheet | so that I can monitor and analyze the activities of caregivers and service users. 
+| As a business owner | I want the system to support multiple care homes and service users | so that it can scale as my business grows. 
+| As a caregiver | I want the application to be simple and easy to use | so that I can quickly navigate and perform my tasks without confusion. |
+
+
 ## Features
 - User Login: Users can log in by entering their name, which is stored in the user worksheet.
 - Care Home Management:
