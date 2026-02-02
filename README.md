@@ -274,10 +274,19 @@ I've used the following Python packages and external imports.
 - `colorama`: used for including color in the terminal
 - `tabulate`: used to display table in terminal 
 
+## Agile Development Process
+
 ### GitHub Projects
 
 [GitHub Projects](https://www.github.com/Bruce0C/nexus_carehomes/projects) served as an Agile tool for this project. Through it, EPICs, User Stories, issues/bugs, and Milestone tasks were planned, then subsequently tracked on a regular basis using the Kanban project board.
 
 ![screenshot](assets/images/agile_methodology.jpeg)
 
+### MoSCoW Prioritization
 
+I've decomposed my Epics into User Stories for prioritizing and implementing them. Using this approach, I was able to apply "MoSCoW" prioritization and labels to my User Stories within the Issues tab.
+
+- **Must Have**: guaranteed to be delivered - required to Pass the project (*max ~60% of stories*)
+- **Should Have**: adds significant value, but not vital (*~20% of stories*)
+- **Could Have**: has small impact if left out (*the rest ~20% of stories*)
+- **Won't Have**: not a priority for this iteration - future features
