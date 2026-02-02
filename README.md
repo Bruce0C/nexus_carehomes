@@ -365,18 +365,18 @@ To run your own version of this application, you will need to create your own Go
 
 These sheets should be in the following format:
 
-**Caregiver**
+**Caregiver:**
 | username |  
 | --- | 
 | Sample data |  
 
-**Homes**
+**Homes:**
 
 | Care home| Address | 
 | ---| ---|
 | Sample data| Sample data |
 
-**Homes details**
+**Homes details:**
 
 | Name| Age | Room |
 | ---| ---| ---|
@@ -387,7 +387,7 @@ These sheets should be in the following format:
 | ---| ---| ---| --- | --- |
 | Sample data| Sample data | Sample data | Sample data | Sample data |
 
-**Schedule**
+**Schedule:**
 | Time| Activity | 
 | ---| ---|
 | Sample data| Sample data |
