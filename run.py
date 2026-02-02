@@ -71,7 +71,7 @@ def log_user_login():
         greeting = "Good evening"
 
     print(f"{Fore.GREEN}{greeting}{Style.RESET_ALL}!"
-          "Please enter your username to begin.")
+          " Please enter your username to begin.")
 
     name_str = input(f"\n{Fore.YELLOW}Enter your name here:{Style.RESET_ALL} ")
     print(f'\n{Fore.GREEN}Name logged succesefully.{Style.RESET_ALL}')

@@ -452,9 +452,8 @@ By forking the GitHub Repository, you make a copy of the original repository on 
 | [Python Tutor](https://pythontutor.com) | Additional Python help |
 | [Colorama](https://www.youtube.com/watch?v=u51Zjlnui4Y) | Adding color in Python |
 | [Tabulate](https://www.youtube.com/watch?reload=9&v=5pL2WREyNXE) | Adding tables in terminal |
-| [StackOverflow](https://stackoverflow.com/a/50921841) | Clear screen in Python |
 | [Log my care](https://www.logmycare.co.uk/care-management-software?utm_term=care%20management%20software&utm_campaign=High+intent&utm_source=adwords&utm_medium=ppc&hsa_acc=8799633146&hsa_cam=23237593405&hsa_grp=187891577469&hsa_ad=782700382458&hsa_src=g&hsa_tgt=kwd-341072370908&hsa_kw=care%20management%20software&hsa_mt=b&hsa_net=adwords&hsa_ver=3&gad_source=1&gad_campaignid=23237593405&gbraid=0AAAAADD45U7Wt78ZGT7oX1spbhw_8tnTV&gclid=Cj0KCQiAkPzLBhD4ARIsAGfah8iKo5RnRopspFrGJUPr05Lxz9w7V9hVH_0HQT2FR8FyGydntk81yRYaAgdbEALw_wcB) | Help with deciding core functionality and used as an example of a fully formed and funtional care home application |
-| [ChatGPT](https://chatgpt.com) | Help with generating random names and fictional addresses and scenarios for the service users schedule and notes.|
+| [ChatGPT](https://chatgpt.com) | Help with generating random names and fictional addresses and scenarios for the service users schedule and notes in work sheet.|
 
 ### Acknowledgements
 
