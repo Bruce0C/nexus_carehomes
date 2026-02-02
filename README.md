@@ -265,7 +265,6 @@ Source: [Mermaid Flowchart for Nexus care homes ](https://mermaid.live/edit#pako
 
 #### Imports
 
-
 I've used the following Python packages and external imports.
 
 - `gspread`: used with the Google Sheets API
@@ -274,3 +273,11 @@ I've used the following Python packages and external imports.
 - `os`: used for adding a `clear()` function
 - `colorama`: used for including color in the terminal
 - `tabulate`: used to display table in terminal 
+
+### GitHub Projects
+
+[GitHub Projects](https://www.github.com/Bruce0C/nexus_carehomes/projects) served as an Agile tool for this project. Through it, EPICs, User Stories, issues/bugs, and Milestone tasks were planned, then subsequently tracked on a regular basis using the Kanban project board.
+
+![screenshot](assets/images/agile_methodology.jpeg)
+
+
