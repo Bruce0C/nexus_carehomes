@@ -41,6 +41,15 @@
 
 ## Bugs
 
+|  Bug |  Fix | Screenshot|
+| ---| ---| --|
+|Notes Input Created Blank Rows in Service User Worksheets
+When caregivers attempted to input notes for a specific service user, the program appended the notes directly to the worksheet corresponding to the service user's name. However, this caused an issue where only the notes were added as a new row, leaving the rest of the row blank. This created confusion for users, as the service user worksheets were intended to store structured data (e.g., name, age, room number, etc.), and the blank rows disrupted the layout and organization of the data. This negatively impacted the user experience and made it difficult to manage the service user data effectively.| Created a Separate notes Worksheet
+To resolve this issue, a dedicated notes worksheet was created to store all notes separately from the service user worksheets. This ensures that:
+
+- Notes are stored in a centralized location, making it easier for caregivers and managers to review them.
+- The service user worksheets remain clean and organized, containing only structured data relevant to the service users.
+- The user experience is improved, as caregivers can now easily input and retrieve notes without disrupting the service user data.| ![screenshot](assets/images/append_row_bug%20.jpeg) |
 
 ### Fixed Bugs
 
