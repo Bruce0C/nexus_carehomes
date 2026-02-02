@@ -391,3 +391,29 @@ These sheets should be in the following format:
 | Time| Activity | 
 | ---| ---|
 | Sample data| Sample data |
+
+A credentials file in `.JSON` format from the Google Cloud Platform is also mandatory:
+
+[Google Cloud Platform](https://console.cloud.google.com)
+
+1. From the dashboard click on "Select a project", and then the **NEW PROJECT** button.
+2. Give the project a name, and then click **CREATE**.
+3. Click **SELECT PROJECT** to get to the project page.
+4. From the side-menu, select "APIs & Services", then select "Library".
+5. Search for the "Google Drive API", select it, and then click on **ENABLE**.
+6. Click on the **CREATE CREDENTIALS** button.
+7. From the "Which API are you using?" dropdown menu, choose **Google Drive API**.
+8. For the "What data will you be accessing?" question, select **Application Data**.
+9. Click **Next**.
+10. Enter a "Service Account" name, then click **Create**.
+11. In the "Role" dropdown box, choose "Basic" > "Editor", then press **Continue**.
+12. "Grant users access to this service account" can be left blank. Click **DONE**.
+13. On the next page, click on the "Service Account" that has been created.
+14. On the next page, click on the "Keys" tab.
+15. Click on the "Add Key" dropdown, and select "Create New Key".
+16. Select `JSON`, and then click **Create**. This will trigger the `.json` file with your API credentials in it to download to your machine locally.
+17. For local deployment, this needs to be renamed to `creds.json`.
+18. Repeat steps 4 & 5 above to add the "Google Sheets API".
+19. Copy the `client_email` that is in the `creds.json` file.
+20. Share your Google Sheet to the `client_email`, ensuring "Editing" is enabled.
+21. Add the `creds.json` file to your `.gitignore` file, so as not to push your credentials to GitHub publicly.
