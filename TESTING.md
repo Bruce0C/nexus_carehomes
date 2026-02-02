@@ -164,19 +164,50 @@ No fixes were required as the feature behaved as expected.
 
 ## User Story Testing
 
+| Target | Expectation | Outcome | Screenshot |
+| --- | --- | --- | --- |
+| As a caregiver | I want to log my username to the system | so that my activities can be tracked and recorded. |  ![screenshot](documentation/features/feature01.png) |
+| As a caregiver  | I want to view a list of care homes | so that I can select the care home I am assigned to. |  ![screenshot](documentation/features/feature01.png) |
+| As a caregiver  | I want to select my assigned care home | so that I can view the service users in that care home. |  ![screenshot](documentation/features/feature01.png) |
+| As a caregiver  | I want to view a list of service users in my assigned care home | So that I can choose the service user I am responsible for.|  ![screenshot](documentation/features/feature01.png) |
+| As a caregiver  |I want to select a specific service user | so that I can view their details and manage their information. |  ![screenshot](documentation/features/feature01.png) |
+| As a caregiver  | I want to view detailed information about a service user | so that I can better understand their needs and provide appropriate care.|  ![screenshot](documentation/features/feature01.png) |
+| As a caregiver  | I want to input notes about a service user | so that I can document important information about their care. |  ![screenshot](documentation/features/feature01.png) |
+| As a caregiver | I want to log the medication I administer to a service user | so that I can track the medication history and ensure compliance with dosage limits. |  ![screenshot](documentation/features/feature01.png) |
+| As a caregiver| I want to view the daily schedule for a service user | so that I can plan my day and ensure all activities are completed on time. |  ![screenshot](documentation/features/feature01.png) |
+| As a caregiver | I want to exit the program gracefully | so that I can end my session without losing any data. |  ![screenshot](documentation/features/feature01.png) |
+| As a caregiver | I want the program to handle invalid inputs | so that I can correct my mistakes without the program crashing. |  ![screenshot](documentation/features/feature01.png) |
+| As a manager | I want all data to be stored in a centralized Google Sheet | so that I can monitor and analyze the activities of caregivers and service users. |  ![screenshot](documentation/features/feature01.png) |
+| As a business owner | I want the system to support multiple care homes and service users | so that it can scale as my business grows. |  ![screenshot](documentation/features/feature01.png) |
+| As a caregiver | I want the application to be simple and easy to use | so that I can quickly navigate and perform my tasks without confusion. | ![screenshot](documentation/features/feature01.png) |
+
 
 ## Bugs
 
 
 ### Fixed Bugs
 
+[![GitHub issue custom search](https://img.shields.io/github/issues-search/Bruce0C/nexus_carehomes?query=is%3Aissue%20is%3Aclosed%20label%3Abug&label=Fixed%20Bugs&color=green)](https://www.github.com/Bruce0C/nexus_carehomes/issues?q=is%3Aissue+is%3Aclosed+label%3Abug)
 
+I've used [GitHub Issues](https://www.github.com/Bruce0C/nexus_carehomes/issues) to track and manage bugs and issues during the development stages of my project.
+
+All previously closed/fixed bugs can be tracked [here](https://www.github.com/Bruce0C/nexus_carehomes/issues?q=is%3Aissue+is%3Aclosed+label%3Abug).
+
+![screenshot](documentation/bugs/gh-issues-closed.png)
 ### Unfixed Bugs
 
 
 
 ### Known Issues
 
+| Issue | Screenshot |
+| --- | --- |
+| The project is designed to be responsive from `375px` and upwards, in line with the material taught on the course LMS. Minor layout inconsistencies may occur on extra-wide (e.g. 4k/8k monitors), or smart-display devices (e.g. Nest Hub, Smart Watches, Gameboy Color, etc.), as these resolutions are outside the project’s scope, as taught by Code Institute. | ![screenshot](documentation/issues/poor-responsiveness.png) |
+| When using a helper `clear()` function, any text above the height of the terminal (24 lines) does not clear, and remains when scrolling up. | ![screenshot](documentation/issues/clear-scrolling.png) |
+| The `colorama` terminal colors are fainter on Heroku when compared to the IDE locally. | ![screenshot](documentation/issues/colorama.png) |
+| Emojis are cut-off when viewing the application from Firefox. | ![screenshot](documentation/issues/emojis.png) |
+| The Python terminal doesn't work well with Safari, and sometimes uses cannot type in the application. | ![screenshot](documentation/issues/safari.png) |
+| If a user types `CTRL`+`C` in the terminal on the live site, they can manually stop the application and receive and error. | ![screenshot](documentation/issues/ctrl-c.png) |
 
 > [!IMPORTANT]  
 > There are no remaining bugs that I am aware of, though, even after thorough testing, I cannot rule out the possibility.
