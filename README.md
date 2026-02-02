@@ -358,6 +358,36 @@ This application uses [Google Sheets](https://docs.google.com/spreadsheets) to h
 
 To run your own version of this application, you will need to create your own Google Sheet with the following worksheets names:
 - Caregiver: `user`
-- Homes: `home`, `farhaven`, `tenville`, `brookway`
+- Homes: `home`
+- Home details: `farhaven`, `tenville`, `brookway`
 - Service users: `mike`, `donald`, `tom`, `ed`, `alice`, `kyle`, `lisa`, `gen` and `alice`
 - Schedules: `mike_schedule`, `donald_schedule`, `tom_schedule`, `ed_schedule`, `alice_schedule`, `kyle_schedule`, `lisa_schedule`, `gen_schedule` and `alice_schedule`
+
+These sheets should be in the following format:
+
+**Caregiver**
+| username |  
+| --- | 
+| Sample data |  
+
+**Homes**
+
+| Care home| Address | 
+| ---| ---|
+| Sample data| Sample data |
+
+**Homes details**
+
+| Name| Age | Room |
+| ---| ---| ---|
+| Sample data| Sample data | Sample data |
+
+**Service users:**
+| Name| Age | Room | Hand over notes notes | Medication |
+| ---| ---| ---| --- | --- |
+| Sample data| Sample data | Sample data | Sample data | Sample data |
+
+**Schedule**
+| Time| Activity | 
+| ---| ---|
+| Sample data| Sample data |
