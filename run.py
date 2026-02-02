@@ -55,8 +55,12 @@ def clear():
 
 def log_user_login():
     """
-    Log user name in user worksheet.
+    Log username in user worksheet.
     """
+    clear()  # Clear the console before logging in
+    # Greetings message
+    print(f"Welcome to {Fore.GREEN}Nexus Carehome{Style.RESET_ALL}!")
+    print("Your digital assistant to help inform your working day!\n")
     # Determine the current hour
     current_hour = datetime.now().hour
     if current_hour < 12:
@@ -94,6 +98,7 @@ def get_care_homes():
     Collects column of data from home worksheet and prints it in
     a simple_grid table format.
     """
+    clear()  # Clear the console before displaying the menu
     homes = care_homes.get_all_values()  # Fetches all rows as a list of lists
 
     # Prepare data for tabulate
@@ -129,6 +134,7 @@ def select_home():
                 f"{Fore.YELLOW}Enter your choice (1, 2, 3, or 0 to exit):"
                 f"{Style.RESET_ALL} "))
             if choice == 1:
+                clear()  # Clear the console before displaying the menu
                 print(f"{Fore.GREEN}\nFarhaven selected.{Style.RESET_ALL}")
                 data = f_names.get_all_values()
                 print("\nService users living in Farhaven:")
@@ -146,6 +152,7 @@ def select_home():
                                "grid"))
                 return f_names
             elif choice == 2:
+                clear()  # Clear the console before displaying the menu
                 print(f"{Fore.GREEN}\nTenville selected.{Style.RESET_ALL}")
                 data = t_names.get_all_values()
                 print("\nService users living in Tenville:")
@@ -163,6 +170,7 @@ def select_home():
                                "grid"))
                 return t_names
             elif choice == 3:
+                clear()  # Clear the console before displaying the menu
                 print(f"{Fore.GREEN}\nBrookway selected.{Style.RESET_ALL}")
                 data = b_names.get_all_values()
                 print("\nService users living in Brookway:")
@@ -180,7 +188,7 @@ def select_home():
                                "grid"))
                 return b_names
             elif choice == 0:
-
+                clear()  # Clear the console before logging in
                 print(f"\n{Fore.RED}Exiting the program. {Style.RESET_ALL}"
                       f"{Fore.GREEN}Goodbye!{Style.RESET_ALL}")
                 sys.exit()  # Use sys.exit instead of exit
@@ -200,7 +208,6 @@ def select_service_user(selected_home):
     Displays service users based on the selected home and allows the user
     to choose a service user or return to the care homes menu.
     """
-
     if selected_home == f_names:
         print(
             f"\n{Fore.YELLOW}Select a service user"
@@ -255,6 +262,7 @@ def service_user_information(selected_user):
     service user and provides options to input notes, administer medication,
     view the daily schedule, or exit the program.
     """
+    clear()  # Clear the console before displaying service user information
     print(f"\n{Fore.YELLOW}Fetching information "
           F"for {selected_user}...\n{Style.RESET_ALL}")
 
@@ -294,6 +302,7 @@ def service_user_information(selected_user):
                 input(f"\n{Fore.YELLOW}Enter your choice "
                       f"(0, 1, 2, or 3):{Style.RESET_ALL} "))
             if choice == 0:
+                clear()  # Clear the console before logging in
                 print(f"\n{Fore.RED}Exiting the program. {Style.RESET_ALL}"
                       f"{Fore.GREEN}Goodbye!{Style.RESET_ALL}")
                 sys.exit()  # Use sys.exit instead of exit
@@ -381,7 +390,7 @@ def administer_medication(selected_user):
         try:
             choice = int(
                 input(f"{Fore.LIGHTYELLOW_EX}Enter the number of the "
-                      f"pill to administer: \n{Style.RESET_ALL}"))
+                      f"pill to administer: {Style.RESET_ALL}"))
             if choice == 0:
                 clear()
                 print(
@@ -392,31 +401,35 @@ def administer_medication(selected_user):
 
                 if medication_log["red_pill"] < 2:
                     medication_log["red_pill"] += 1
-                    clear()
+                    clear()  # Clear the console before displaying the menu
                     print(
                         f"{Fore.LIGHTMAGENTA_EX}1 Red pill administered "
                         f"successfully.\n{Style.RESET_ALL}")
                 else:
+                    clear()  # Clear the console before displaying the menu
                     print(
                         f"{Fore.RED}You have already administered the "
                         f"maximum of 2 red pills today.{Style.RESET_ALL}\n")
             elif choice == 2:
                 if medication_log["blue_pill"] < 2:
                     medication_log["blue_pill"] += 1
-                    clear()
+                    clear()  # Clear the console before displaying the menu
                     print(
                         f"{Fore.LIGHTMAGENTA_EX}1 Blue pill administered "
                         f"successfully.\n{Style.RESET_ALL}")
                 else:
+                    clear()  # Clear the console before displaying the menu
                     print(
                         f"{Fore.RED}You have already administered "
                         f"the maximum of 2 blue pills today.\n"
                         f"{Style.RESET_ALL}")
             else:
+                clear()  # Clear the console before displaying the menu
                 print(
                     f"{Fore.RED}Invalid choice. Please select a valid option."
                     f"\n {Style.RESET_ALL}")
         except ValueError:
+            clear()  # Clear the console before displaying the menu
             print(
                 f"{Fore.RED}Invalid input. Please enter a number.\n"
                 f"{Style.RESET_ALL}")
@@ -439,10 +452,6 @@ def main():
     selected_user = select_service_user(selected_home)
     service_user_information(selected_user)
 
-
-# Greetings message
-print(f"Welcome to {Fore.GREEN}Nexus Carehome{Style.RESET_ALL}!")
-print("Your digital assistant to help inform your working day!\n")
 
 # Run the program
 clear()
