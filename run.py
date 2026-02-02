@@ -310,10 +310,19 @@ def service_user_information(selected_user):
                 print(f"{Fore.GREEN}\nInput notes selected.{Style.RESET_ALL}")
                 note = input(
                     f"{Fore.YELLOW}\nEnter your note:{Style.RESET_ALL} ")
-                # Append the note to the worksheet
-                user_worksheet.append_row([note])
-                print(f"{Fore.GREEN}\nNote added successfully"
-                      f"{Style.RESET_ALL}\n")
+                # Access the 'notes' worksheet
+                notes_worksheet = SHEET.worksheet('notes')
+
+                # Find the next empty row in the 'notes' worksheet
+                next_row = len(notes_worksheet.col_values(1)) + \
+                    1  # Assuming column A is used for notes
+
+                # Append the note to the 'notes' worksheet in column A
+                notes_worksheet.update_cell(next_row, 1, note)
+
+                print(
+                    f"{Fore.GREEN}\nNote added successfully to the 'notes'"
+                    f" worksheet.{Style.RESET_ALL}\n")
             elif choice == 2:
                 print(
                     f"{Fore.GREEN}\nAdminister medication selected."
