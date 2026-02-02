@@ -454,3 +454,23 @@ By forking the GitHub Repository, you make a copy of the original repository on 
 1. Log in to GitHub and locate the [GitHub Repository](https://www.github.com/Bruce0C/nexus_carehomes).
 2. At the top of the Repository, just below the "Settings" button on the menu, locate and click the "Fork" Button.
 3. Once clicked, you should now have a copy of the original repository in your own GitHub account!
+
+## Credits
+
+...
+
+### Content
+
+| Source | Notes |
+| --- | --- |
+| [Markdown Builder](https://markdown.2bn.dev) | Help generating Markdown files |
+| [Chris Beams](https://chris.beams.io/posts/git-commit) | "How to Write a Git Commit Message" |
+| [Python Tutor](https://pythontutor.com) | Additional Python help |
+| [Colorama](https://www.youtube.com/watch?v=u51Zjlnui4Y) | Adding color in Python |
+| [Tabulate](https://www.youtube.com/watch?reload=9&v=5pL2WREyNXE) | Adding tables in terminal |
+| [StackOverflow](https://stackoverflow.com/a/50921841) | Clear screen in Python |
+| [Log mt care](https://www.logmycare.co.uk/care-management-software?utm_term=care%20management%20software&utm_campaign=High+intent&utm_source=adwords&utm_medium=ppc&hsa_acc=8799633146&hsa_cam=23237593405&hsa_grp=187891577469&hsa_ad=782700382458&hsa_src=g&hsa_tgt=kwd-341072370908&hsa_kw=care%20management%20software&hsa_mt=b&hsa_net=adwords&hsa_ver=3&gad_source=1&gad_campaignid=23237593405&gbraid=0AAAAADD45U7Wt78ZGT7oX1spbhw_8tnTV&gclid=Cj0KCQiAkPzLBhD4ARIsAGfah8iKo5RnRopspFrGJUPr05Lxz9w7V9hVH_0HQT2FR8FyGydntk81yRYaAgdbEALw_wcB) | Help with deciding core functionality and used as an example of a fully formed and funtional care home application |
+
+### Acknowledgements
+
+- I would like to thank my Code Institute mentor, [Tim Nelson](https://www.github.com/TravelTimN) for the support throughout the development of this project.
