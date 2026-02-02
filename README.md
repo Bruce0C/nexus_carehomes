@@ -263,3 +263,14 @@ Source: [Mermaid Flowchart for Nexus care homes ](https://mermaid.live/edit#pako
 - `main()`
   - Purpose: Orchestrates the execution of all program functions.
 
+#### Imports
+
+
+I've used the following Python packages and external imports.
+
+- `gspread`: used with the Google Sheets API
+- `google.oauth2.service_account`: used for the Google Sheets API credentials
+- `time`: used for adding time delays
+- `os`: used for adding a `clear()` function
+- `colorama`: used for including color in the terminal
+- `tabulate`: used to display table in terminal 
