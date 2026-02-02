@@ -166,20 +166,20 @@ No fixes were required as the feature behaved as expected.
 
 | Target | Expectation | Outcome | Screenshot |
 | --- | --- | --- | --- |
-| As a caregiver | I want to log my username to the system | so that my activities can be tracked and recorded. |  ![screenshot](documentation/features/feature01.png) |
-| As a caregiver  | I want to view a list of care homes | so that I can select the care home I am assigned to. |  ![screenshot](documentation/features/feature01.png) |
-| As a caregiver  | I want to select my assigned care home | so that I can view the service users in that care home. |  ![screenshot](documentation/features/feature01.png) |
-| As a caregiver  | I want to view a list of service users in my assigned care home | So that I can choose the service user I am responsible for.|  ![screenshot](documentation/features/feature01.png) |
-| As a caregiver  |I want to select a specific service user | so that I can view their details and manage their information. |  ![screenshot](documentation/features/feature01.png) |
-| As a caregiver  | I want to view detailed information about a service user | so that I can better understand their needs and provide appropriate care.|  ![screenshot](documentation/features/feature01.png) |
-| As a caregiver  | I want to input notes about a service user | so that I can document important information about their care. |  ![screenshot](documentation/features/feature01.png) |
-| As a caregiver | I want to log the medication I administer to a service user | so that I can track the medication history and ensure compliance with dosage limits. |  ![screenshot](documentation/features/feature01.png) |
-| As a caregiver| I want to view the daily schedule for a service user | so that I can plan my day and ensure all activities are completed on time. |  ![screenshot](documentation/features/feature01.png) |
-| As a caregiver | I want to exit the program gracefully | so that I can end my session without losing any data. |  ![screenshot](documentation/features/feature01.png) |
-| As a caregiver | I want the program to handle invalid inputs | so that I can correct my mistakes without the program crashing. |  ![screenshot](documentation/features/feature01.png) |
-| As a manager | I want all data to be stored in a centralized Google Sheet | so that I can monitor and analyze the activities of caregivers and service users. |  ![screenshot](documentation/features/feature01.png) |
-| As a business owner | I want the system to support multiple care homes and service users | so that it can scale as my business grows. |  ![screenshot](documentation/features/feature01.png) |
-| As a caregiver | I want the application to be simple and easy to use | so that I can quickly navigate and perform my tasks without confusion. | ![screenshot](documentation/features/feature01.png) |
+| As a caregiver | I want to log my username to the system | so that my activities can be tracked and recorded. |  ![screenshot](assets/images/log_username.jpeg) |
+| As a caregiver  | I want to view a list of care homes | so that I can select the care home I am assigned to. |  ![screenshot](assets/images/care_home_list.jpeg) |
+| As a caregiver  | I want to select my assigned care home | so that I can view the service users in that care home. |  ![screenshot](assets/images/care_home_select.jpeg) |
+| As a caregiver  | I want to view a list of service users in my assigned care home | So that I can choose the service user I am responsible for.|  ![screenshot](assets/images/service_user_list.jpeg) |
+| As a caregiver  | I want to select a specific service user | so that I can view their details and manage their information. |  ![screenshot](assets/images/service%20user_select.jpeg) |
+| As a caregiver  | I want to view detailed information about a service user | so that I can better understand their needs and provide appropriate care.|  ![screenshot](assets/images/service_user_info.jpeg) |
+| As a caregiver  | I want to input notes about a service user | so that I can document important information about their care. |  ![screenshot](assets/images/input_notes.jpeg) |
+| As a caregiver | I want to log the medication I administer to a service user | so that I can track the medication history and ensure compliance with dosage limits. |  ![screenshot](assets/images/administer_medication.jpeg) |
+| As a caregiver| I want to view the daily schedule for a service user | so that I can plan my day and ensure all activities are completed on time. |  ![screenshot](assets/images/service_user_schedule.jpeg) |
+| As a caregiver | I want to exit the program gracefully | so that I can end my session without losing any data. |  ![screenshot](assets/images/exit_program.jpeg) |
+| As a caregiver | I want the program to handle invalid inputs | so that I can correct my mistakes without the program crashing. |  ![screenshot](assets/images/) |
+| As a manager | I want all data to be stored in a centralized Google Sheet | so that I can monitor and analyze the activities of caregivers and service users. |  ![screenshot](assets/images/google_sheet.jpeg) |
+| As a business owner | I want the system to support multiple care homes and service users | so that it can scale as my business grows. |  ![screenshot](assets/images/google_sheet.jpeg) |
+| As a caregiver | I want the application to be simple and easy to use | so that I can quickly navigate and perform my tasks without confusion. | ![screenshot](assets/images/service_user_list.jpeg) |
 
 
 ## Bugs
