@@ -187,13 +187,24 @@ Description: Add alerts for critical service user conditions (e.g., missed medic
 
 ### Data Model
 
-#### Flowchart
+#### Flowcharts
 
-To follow best practice, a flowchart was created for the app's logic, and mapped out using a free version of [Lucidchart](https://www.lucidchart.com/pages/landing?utm_source=google&utm_medium=cpc&utm_campaign=_chart_en_tier1_mixed_search_brand_exact_&km_CPC_CampaignId=1490375427&km_CPC_AdGroupID=55688909257&km_CPC_Keyword=lucid%20chart&km_CPC_MatchType=e&km_CPC_ExtensionID=&km_CPC_Network=g&km_CPC_AdPosition=&km_CPC_Creative=442433236001&km_CPC_TargetID=kwd-55720648523&km_CPC_Country=9207727&km_CPC_Device=c&km_CPC_placement=&km_CPC_target=&gad_source=1&gad_campaignid=1490375427&gbraid=0AAAAADLdSjCZdVLtLZlGkXsJxpLxrrH5v&gclid=Cj0KCQiAkPzLBhD4ARIsAGfah8gYdAgpF23HWd-02e0-2pXGsdTNgShyvfqkr9xda1MTZY-jis3vvhoaAsZhEALw_wcB). The flowchart below represents the main process of this Python program. It shows the entire cycle of the application.
+**Lucidchart Flowchart**
 
-![screenshot](documentation/flowchart.png)
+To follow best practice, a basic flowchart was created for the app's logic, and mapped out using a free version of [Lucidchart](https://www.lucidchart.com/pages/landing?utm_source=google&utm_medium=cpc&utm_campaign=_chart_en_tier1_mixed_search_brand_exact_&km_CPC_CampaignId=1490375427&km_CPC_AdGroupID=55688909257&km_CPC_Keyword=lucid%20chart&km_CPC_MatchType=e&km_CPC_ExtensionID=&km_CPC_Network=g&km_CPC_AdPosition=&km_CPC_Creative=442433236001&km_CPC_TargetID=kwd-55720648523&km_CPC_Country=9207727&km_CPC_Device=c&km_CPC_placement=&km_CPC_target=&gad_source=1&gad_campaignid=1490375427&gbraid=0AAAAADLdSjCZdVLtLZlGkXsJxpLxrrH5v&gclid=Cj0KCQiAkPzLBhD4ARIsAGfah8gYdAgpF23HWd-02e0-2pXGsdTNgShyvfqkr9xda1MTZY-jis3vvhoaAsZhEALw_wcB). 
 
-'''mermaid
+
+The flowchart below represents the basic process of this Python program. It shows the entire cycle of the application.
+
+![screenshot](assets/images/lucidchard_flowchard.png)
+
+**Mermaid flowchart**
+
+The flowchart below represents the detailed main process of this Python program. It shows the entire cycle of the application.
+
+![screenshot](assets/images/mermaid_flowchart.jpeg)
+
+```mermaid
 flowchart TD
     A[Start] --> B[Log User Login]
     B -->|Valid Name| C[Display Care Homes]
@@ -229,7 +240,7 @@ flowchart TD
     K -->|No Data Available| H
 
     Z[Exit Program]
-
+```
 
 Source: [Mermaid Flowchart for Nexus care homes ](https://mermaid.live/edit#pako:eNp9VNFyojAU_ZVMnm1HalHhYWcUtGpbd6fu9qHgQ5ZcNbOQOCHYuuq_b4igoM7yAuGcc8-59zLscCQoYBcvYvEZrYhU6KcfcqSvXjBT-jxHd3ffUD94EUv0KwWJ9APj8yOnn4P7dxIziqYkgT3yAp-l65hskUckoJFIIK2Rx3xTofdDfgQ9Y-MHM4ghUmdxofUrRmO-ztQeDU5OM5AbFoGJl9YEgy-mmR9Bfkc_pFhKktQIZZqipl_GGZg4wzJO1aHQD68TPd1MpNGFkAlRTPCa9g1UJjlSojIqPcAq5SLesIz3ZFCfKIJ6G8Ji8jvWwxyd_L-vc7dyFkf2VKArQVlvVLhpFzQVKs8xDirHeZXWownjLFW6tVegLDKd7dEkuAnUpO8MPnUKFusRRSugWZ7iObjxuiYr1limHRf9KEA9SoGiWRZFkKaLLI63pqszayClkDmN8aXpRXdW1plcr3BiBd4Koj9FmheWMDWvsi82Mikwy4CGjt6A5E2cghTgeSToPKiCdiQ-395qFfzfEi8-c9zAS8kodpXMoIET0N9gfsS7nB5itYIEQuzqRwoLksUqxCE_aNma8A8hklIpRbZcYXdB4lSfsjUlCnxGcpMTBTgF6YmMK-zapgJ2d_gLu1373mlZbdt5dFqtZsdxGnir39471kPL6rZbjw-21W52Dg3811g2NdK1HLvZdDTBbnd0NT04JeTr8Udl_leHf6GMf4c)
 
